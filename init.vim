@@ -44,22 +44,7 @@ call plug#begin()
 Plug 'tpope/vim-surround'
 call plug#end()
 
-
-"func! UpByIndent()
-"    norm! ^
-"    let start_col = col('.')
-"    let col = start_col
-"    while col >= start_col
-"        norm! k^
-"        if getline('.') =~# '^\s*$'
-"            let col = start_col
-"        elseif col('.') <= 1
-"            return
-"        else
-"            let col = col('.')
-"        endif
-"    endwhile
-"endfunction
-"
-"nnoremap <c-[> :call UpByIndent()<cr>
-
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=200})
+augroup END
