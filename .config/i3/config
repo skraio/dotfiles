@@ -25,7 +25,7 @@ for_window [floating] border pixel 1
 # class                 border  backgr. text    indicator child_border                                                                     
 client.focused_inactive #000000 #000000 #000000  #000000 #000000                                                                            
 client.unfocused        #000000 #000000 #000000 #000000 #000000                                                                            
-client.focused          #000000 #000000 #000000 #000000 #E95420    
+client.focused          #000000 #000000 #000000 #000000 #8ba4b0    
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -256,5 +256,5 @@ assign [class="obsidian"] 2
 
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets 
 
-for_window [class="Alacritty"] floating enable, move absolute position 1090px 330px
+for_window [class="Alacritty"] floating enable, move absolute position 1090px 60px
 

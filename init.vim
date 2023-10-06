@@ -18,6 +18,8 @@ set termguicolors
 set colorcolumn=80
 
 let mapleader=" "
+nnoremap j gj
+nnoremap k gk
 inoremap <C-L> <Right>
 nnoremap H ^
 nnoremap L $
@@ -40,11 +42,17 @@ nnoremap <C-u> <C-u>zz
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-call plug#begin()
-Plug 'tpope/vim-surround'
-call plug#end()
-
 augroup highlight_yank
     autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=200})
 augroup END
+
+call plug#begin()
+Plug 'tpope/vim-surround'
+Plug 'rebelot/kanagawa.nvim'
+Plug 'RRethy/vim-illuminate'
+Plug 'christianchiarulli/nvcode-color-schemes.vim'
+call plug#end()
+
+
+colorscheme kanagawa-dragon
