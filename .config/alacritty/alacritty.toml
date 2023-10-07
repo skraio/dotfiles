@@ -1,1 +1,97 @@
-/home/askar/.config/alacritty/alacritty.toml
+[[keyboard.bindings]]
+key="Space"
+mods="Control"
+mode="Vi"
+action="ScrollToBottom"
+
+[[keyboard.bindings]]
+key="Space"
+mods="Control"
+action="ToggleViMode"
+
+[scrolling]
+history=10000
+multiplier=3
+
+[bell]
+animation = "EaseOutExpo"
+color = "#FFFFFF"
+duration = 0
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[env]
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[font]
+builtin_box_drawing = true
+size = 12
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 0
+y = 0
+
+[window.padding]
+x = 6
+y = 3
+
+[window.dimensions]
+columns = 80 # Columns wide
+lines = 27 # Columns high
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+hide_when_typing = true
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.primary]
+background= '#181616'
+foreground= '#c5c9c5'
+
+[colors.cursor]
+text= '0x000000'
+cursor= '0xffffff'
+
+[colors.normal]
+black=   '#0d0c0c'
+red=     '#c4746e'
+green=   '#8a9a7b'
+yellow=  '#c4b28a'
+blue=    '#8ba4b0'
+magenta= '#a292a3'
+cyan=    '#8ea4a2'
+white=   '#C8C093'
+
+[colors.bright]
+black=   '#a6a69c'
+red=     '#E46876'
+green=   '#87a987'
+yellow=  '#E6C384'
+blue=    '#7FB4CA'
+magenta= '#938AA9'
+cyan=    '#7AA89F'
+white=   '#c5c9c5'
+
+[colors.selection]
+background= '#2D4F67'
+foreground= '#C8C093'
+
+[[colors.indexed_colors]]
+index = 16
+color = "#b6927b"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#b98d7b"
+
