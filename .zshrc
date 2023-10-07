@@ -112,4 +112,4 @@ if [ -x "$(command -v exa)" ]; then
     alias l="exa --long --sort=type --all"
 fi
 #
-source /home/askar/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

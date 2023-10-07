@@ -245,14 +245,17 @@ bindsym $mod+Shift+period exec systemctl suspend
 exec --no-startup-id brave-browser
 exec --no-startup-id code
 exec --no-startup-id spotify
-#exec --no-startup-id obsidian
+exec --no-startup-id obsidian
+exec --no-startup-id telegram-desktop
 
 assign [class="Brave-browser"] 1
+assign [class="TelegramDesktop"] 2
 assign [class="Code"] 3
+assign [class="obsidian"] 9
 for_window [class="Spotify"] move to workspace 10
-#assign [class="obsidian"] 2
 
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets 
 
 #Polybar Launch Script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
