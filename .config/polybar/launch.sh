@@ -1,0 +1,1 @@
+/home/askar/.config/polybar/launch.sh

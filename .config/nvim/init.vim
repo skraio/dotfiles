@@ -1,0 +1,1 @@
+/home/askar/.config/nvim/init.vim
