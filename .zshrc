@@ -113,3 +113,6 @@ if [ -x "$(command -v exa)" ]; then
 fi
 #
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Created by `pipx` on 2023-10-08 14:55:04
+export PATH="$PATH:/home/askar/.local/bin"

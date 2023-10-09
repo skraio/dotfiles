@@ -17,6 +17,7 @@ set hlsearch               " keep matches highlighted.
 set termguicolors
 set colorcolumn=80
 
+
 let mapleader=" "
 nnoremap j gj
 nnoremap k gk
@@ -52,7 +53,12 @@ Plug 'tpope/vim-surround'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'RRethy/vim-illuminate'
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
+Plug 'lervag/vimtex'
 call plug#end()
 
-
 colorscheme kanagawa-dragon
+
+filetype plugin indent on
+syntax enable
+let g:vimtex_view_method = 'zathura'
+

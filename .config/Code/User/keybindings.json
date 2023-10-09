@@ -1,0 +1,53 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+d",
+        "command": "extension.multiCommand.execute",
+        "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'",
+        "args": {
+            "sequence": [
+                {
+                    "command": "vscode-neovim.send",
+                    "args": "20j"
+                },
+                {
+                    "command": "vscode-neovim.send",
+                    "args": "z"
+                },
+                {
+                    "command": "vscode-neovim.send",
+                    "args": "z"
+                }
+            ]
+        }
+    },
+    {
+        "key": "ctrl+u",
+        "command": "extension.multiCommand.execute",
+        "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'",
+        "args": {
+            "sequence": [
+                {
+                    "command": "vscode-neovim.send",
+                    "args": "20k"
+                },
+                {
+                    "command": "vscode-neovim.send",
+                    "args": "z"
+                },
+                {
+                    "command": "vscode-neovim.send",
+                    "args": "z"
+                },
+            ]
+        }
+    },
+    {
+        "key": "ctrl+0",
+        "command": "-workbench.action.focusSideBar"
+    },
+    {
+        "key": "ctrl+9",
+        "command": "-workbench.action.lastEditorInGroup"
+    }
+]
