@@ -21,13 +21,9 @@ set colorcolumn=80
 let mapleader=" "
 nnoremap j gj
 nnoremap k gk
-inoremap <C-L> <Right>
-nnoremap H ^
-nnoremap L $
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
 nnoremap J mzJ`z
-nnoremap <leader>j j
 nnoremap <leader>/ :noh<return><esc>
 nnoremap <leader>gl gt
 nnoremap <leader>gh gT
@@ -52,7 +48,7 @@ call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'RRethy/vim-illuminate'
-Plug 'christianchiarulli/nvcode-color-schemes.vim'
+"Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'lervag/vimtex'
 call plug#end()
 

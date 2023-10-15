@@ -108,12 +108,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#
+# 
 if [ -x "$(command -v exa)" ]; then
     alias l="exa --long --sort=type --all"
 fi
-#
+
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Created by `pipx` on 2023-10-08 14:55:04
 export PATH="$PATH:/home/askar/.local/bin"
+
+# Shortcut for deleting everything from the cursor until the end of line
+bindkey \^U backward-kill-line
