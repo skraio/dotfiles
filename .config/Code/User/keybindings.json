@@ -49,5 +49,10 @@
     {
         "key": "ctrl+9",
         "command": "-workbench.action.lastEditorInGroup"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "-editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
     }
 ]
