@@ -123,3 +123,5 @@ export PATH="$PATH:/home/askar/.local/bin"
 
 # Shortcut for deleting everything from the cursor until the end of line
 bindkey \^U backward-kill-line
+
+setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
