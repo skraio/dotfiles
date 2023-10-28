@@ -9,10 +9,9 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 15px
+font pango:monospace 11px
 # GET DEM BORDERS OUT OF HEREc:w
 #
 # Thanks Childz
@@ -21,6 +20,8 @@ font pango:monospace 15px
 #for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
 for_window [tiling] border pixel 0
 for_window [floating] border pixel 1
+gaps inner 5
+gaps outer -5
 
 # class                 border  backgr. text    indicator child_border                                                                     
 client.focused_inactive #000000 #000000 #000000  #000000 #000000                                                                            
@@ -190,16 +191,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 8 px or 8 ppt
-        bindsym j resize grow height 8 px or 8 ppt
-        bindsym k resize shrink height 8 px or 8 ppt
-        bindsym l resize grow width 8 px or 8 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 8 px or 8 ppt
-        bindsym Down resize grow height 8 px or 8 ppt
-        bindsym Up resize shrink height 8 px or 8 ppt
-        bindsym Right resize grow width 8 px or 8 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -273,6 +274,4 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id ibus-daemon --xim -d -r
 #exec_always --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
 
-#set $sm HDMI-1 
-#workspace 3 output $sm
-#set $ws3 "3"
+exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --same-as eDP-1

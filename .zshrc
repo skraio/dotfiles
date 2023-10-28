@@ -115,6 +115,7 @@ fi
 
 alias pmp="python3 -m pytest"
 alias pmpf="python3 -m pytest --tb=short -v -rxXs"
+alias glogad="git log --oneline --graph --all --decorate"
 
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -124,4 +125,4 @@ export PATH="$PATH:/home/askar/.local/bin"
 # Shortcut for deleting everything from the cursor until the end of line
 bindkey \^U backward-kill-line
 
-setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
+# setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle

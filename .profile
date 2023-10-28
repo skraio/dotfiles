@@ -31,3 +31,4 @@ xcape -e 'Caps_Lock=Escape;Control_L=Escape'
 export PATH=$PATH:/usr/bin/obsidian
 . "$HOME/.cargo/env"
 setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
+xsetroot -solid "#333333"
