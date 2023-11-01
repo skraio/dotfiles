@@ -1,0 +1,7 @@
+require "user.set"
+require "user.main"
+require "user.remap"
+require "user.lazy"
+require "user.telescope"
+require "user.treesitter"
+require "user.harpoon"
