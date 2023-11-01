@@ -13,9 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
-    'nvim-telescope/telescope.nvim', tag = '0.1.4',
--- or                              , branch = '0.1.x',
-      dependencies = { 'nvim-lua/plenary.nvim' }
+    "nvim-telescope/telescope.nvim", tag = "0.1.4",
+-- or                              , branch = "0.1.x",
+      dependencies = { "nvim-lua/plenary.nvim" }
     },
     {
         "rebelot/kanagawa.nvim",
@@ -30,5 +30,13 @@ require("lazy").setup({
     {
 	    'ThePrimeagen/harpoon',
     },
-
+    {
+        "tpope/vim-surround",
+    },
+    {
+        "lervag/vimtex",
+    },
+    {
+        "vim-illuminate",
+    },
 })
