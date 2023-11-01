@@ -14,18 +14,17 @@
         "asvetliakov.vscode-neovim": 1
     },
     "editor.lineNumbers": "relative",
-    "vscode-neovim.neovimInitVimPaths.linux": "/home/askar/.config/nvim/init.vim",
+    "vscode-neovim.neovimInitVimPaths.linux": "/home/askar/.config/nvim/init.lua",
     "editor.cursorSurroundingLines": 10,
     "editor.autoClosingBrackets": "never",
     "editor.scrollbar.vertical": "hidden",
-    "window.zoomLevel": 1,
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
-    "editor.formatOnSave": true,
     "files.autoSave": "afterDelay",
     "workbench.startupEditor": "none",
     "workbench.iconTheme": "Monokai Classic Icons",
     "editor.autoClosingQuotes": "never",
     "editor.autoSurround": "never",
+    "sqltools.highlightQuery": false,
 }

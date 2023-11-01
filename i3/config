@@ -256,14 +256,10 @@ bindsym $mod+Shift+period exec systemctl suspend
 exec --no-startup-id brave-browser
 exec --no-startup-id code
 exec --no-startup-id spotify
-exec --no-startup-id obsidian
-#exec --no-startup-id telegram-desktop
 exec --no-startup-id xournalpp&disown
 
 assign [class="Brave-browser"] 1
-#assign [class="TelegramDesktop"] 2
 assign [class="Code"] 3
-assign [class="obsidian"] 9
 for_window [class="Spotify"] move to workspace 10
 assign [class="Com.github.xournalpp.xournalpp"] 8
 
@@ -271,7 +267,6 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
 #Polybar Launch Script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id ibus-daemon --xim -d -r
 #exec_always --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
 
 exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --same-as eDP-1
