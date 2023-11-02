@@ -267,6 +267,5 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
 #Polybar Launch Script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-#exec_always --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
 
 exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --same-as eDP-1

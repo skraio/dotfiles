@@ -113,9 +113,6 @@ if [ -x "$(command -v exa)" ]; then
     alias l="exa --long --sort=type --all"
 fi
 
-alias pmp="python3 -m pytest"
-alias ppf="python3 -m pytest --tb=short -v -rxXs"
-
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Created by `pipx` on 2023-10-08 14:55:04

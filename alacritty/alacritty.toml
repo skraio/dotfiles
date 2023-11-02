@@ -1,14 +1,3 @@
-[[keyboard.bindings]]
-key="Space"
-mods="Control"
-mode="Vi"
-action="ScrollToBottom"
-
-[[keyboard.bindings]]
-key="Space"
-mods="Control"
-action="ToggleViMode"
-
 [scrolling]
 history=10000
 multiplier=3
