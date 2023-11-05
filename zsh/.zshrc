@@ -120,3 +120,4 @@ export PATH="$PATH:/home/askar/.local/bin"
 
 # Shortcut for deleting everything from the cursor until the end of line
 bindkey \^U backward-kill-line
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -20,7 +20,14 @@ require("lazy").setup({
     {
         "rebelot/kanagawa.nvim",
         config = function()
-            vim.cmd("colorscheme kanagawa-dragon")
+            require('kanagawa').setup({
+                commentStyle = {italic = false},
+                keywordStyle = {italic = false},
+                background = {
+                    dark = "dragon",
+                }
+            })
+            vim.cmd("colorscheme kanagawa")
         end,
     },
     {
@@ -38,5 +45,8 @@ require("lazy").setup({
     },
     {
         "vim-illuminate",
+    },
+    {
+        "tpope/vim-dadbod",
     },
 })
