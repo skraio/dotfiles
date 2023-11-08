@@ -116,7 +116,7 @@ fi
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Created by `pipx` on 2023-10-08 14:55:04
-export PATH="$PATH:/home/askar/.local/bin"
+export PATH="$PATH:~/.local/bin"
 
 # Shortcut for deleting everything from the cursor until the end of line
 bindkey \^U backward-kill-line
