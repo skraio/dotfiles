@@ -256,11 +256,11 @@ bindsym $win+Shift+s exec flameshot gui
 # Suspend
 bindsym $mod+Shift+period exec systemctl suspend
 exec --no-startup-id brave-browser
-exec --no-startup-id code
+#exec --no-startup-id code
 exec --no-startup-id spotify
 
 assign [class="Brave-browser"] 1
-assign [class="Code"] 2
+#assign [class="Code"] 2
 for_window [class="Spotify"] move to workspace 10
 
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets 

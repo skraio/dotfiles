@@ -18,6 +18,9 @@ require("lazy").setup({
       dependencies = { "nvim-lua/plenary.nvim" }
     },
     {
+        'projekt0n/github-nvim-theme'
+    },
+    {
         "rebelot/kanagawa.nvim",
         config = function()
             require('kanagawa').setup({
@@ -25,7 +28,14 @@ require("lazy").setup({
                 keywordStyle = {italic = false},
                 background = {
                     dark = "dragon",
-                }
+                },
+                colors = {
+                        palette = {
+                            -- change all usages of these colors
+                            dragonViolet= "#938AA9",
+                            dragonBlue2 = "#80a4b0",
+                        },
+                },
             })
             vim.cmd("colorscheme kanagawa")
         end,
@@ -69,5 +79,13 @@ require("lazy").setup({
     },
     {
         "tpope/vim-obsession"
+    },
+    {
+        "folke/zen-mode.nvim",
+        opts = {
+            window = {
+                width = 86,
+            }
+        }
     }
 })
