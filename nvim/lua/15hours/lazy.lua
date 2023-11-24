@@ -87,5 +87,8 @@ require("lazy").setup({
                 width = 86,
             }
         }
+    },
+    {
+        "mbbill/undotree",
     }
 })
