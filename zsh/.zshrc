@@ -117,7 +117,12 @@ source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Created by `pipx` on 2023-10-08 14:55:04
 export PATH="$PATH:~/.local/bin"
+#export PATH="$PATH:~/git/dotfiles/scripts"
+
+bindkey -s ^f "tmux-sessionizer\n"
 
 # Shortcut for deleting everything from the cursor until the end of line
 bindkey \^U backward-kill-line
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

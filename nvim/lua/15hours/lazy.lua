@@ -18,6 +18,9 @@ require("lazy").setup({
       dependencies = { "nvim-lua/plenary.nvim" }
     },
     {
+        'rose-pine/neovim', name = 'rose-pine'
+    },
+    {
         'projekt0n/github-nvim-theme'
     },
     {
@@ -72,13 +75,7 @@ require("lazy").setup({
         build = function() vim.fn["mkdp#util#install"]() end,
     },
     {
-        "tpope/vim-surround",
-    },
-    {
         "tpope/vim-dadbod",
-    },
-    {
-        "tpope/vim-obsession"
     },
     {
         "folke/zen-mode.nvim",

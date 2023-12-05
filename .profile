@@ -30,3 +30,5 @@ setxkbmap -option 'caps:ctrl_modifier'
 xcape -e 'Caps_Lock=Escape;Control_L=Escape'
 . "$HOME/.cargo/env"
 xsetroot -solid "#333333"
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/askar/git/dotfiles/scripts

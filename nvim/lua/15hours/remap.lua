@@ -18,4 +18,4 @@ vim.keymap.set("n", "<leader>]", ":<c-u>put =repeat(nr2char(10), v:count1)<cr>")
 vim.keymap.set("x", ">", ">gv")
 vim.keymap.set("x", "<", "<gv")
 
-
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
