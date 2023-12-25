@@ -1,2 +1,2 @@
 polybar-msg cmd quit
-polybar example &
+polybar example & 

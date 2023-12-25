@@ -9,7 +9,7 @@ export EDITOR=nvim
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="simple"
+ZSH_THEME="robbyrussell"
 
 #
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
@@ -115,14 +115,24 @@ fi
 
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Created by `pipx` on 2023-10-08 14:55:04
-export PATH="$PATH:~/.local/bin"
-#export PATH="$PATH:~/git/dotfiles/scripts"
-
 bindkey -s ^f "tmux-sessionizer\n"
 
 # Shortcut for deleting everything from the cursor until the end of line
 bindkey \^U backward-kill-line
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/askar/conda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/askar/conda/etc/profile.d/conda.sh" ]; then
+        . "/home/askar/conda/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/askar/conda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<

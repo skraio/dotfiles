@@ -63,16 +63,3 @@ blue=    '#7FB4CA'
 magenta= '#938AA9'
 cyan=    '#7AA89F'
 white=   '#c5c9c5'
-
-[colors.selection]
-background= '#2D4F67'
-foreground= '#C8C093'
-
-[[colors.indexed_colors]]
-index = 16
-color = "#b6927b"
-
-[[colors.indexed_colors]]
-index = 17
-color = "#b98d7b"
-
