@@ -1,8 +1,17 @@
 #!/usr/bin/env zsh
 
 
+if [ -e "$HOME/.profile" ] && [ ! -L "$HOME/.profile" ]; then
+    rm "$HOME/.profile"
+fi
+
+if [ -e "$HOME/.zshrc" ] && [ ! -L "$HOME/.zshrc" ]; then
+    rm "$HOME/.zshrc"
+fi
+
+
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="i3,polybar,alacritty,polybar,nvim,tmux,zsh,profile,Code"
+    STOW_FOLDERS="profile,zsh,i3,polybar,alacritty,polybar,nvim,tmux,Code"
 fi
 
 if [[ -z $DOTFILES ]]; then
