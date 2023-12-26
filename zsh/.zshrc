@@ -12,8 +12,6 @@ export EDITOR=nvim
 ZSH_THEME="robbyrussell"
 
 #
-(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[path]=none
 #ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 #
 
@@ -112,8 +110,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -x "$(command -v exa)" ]; then
     alias l="exa --long --sort=type --all"
 fi
-
-source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 bindkey -s ^f "tmux-sessionizer\n"
 
