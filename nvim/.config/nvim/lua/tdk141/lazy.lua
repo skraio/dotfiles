@@ -18,9 +18,6 @@ require("lazy").setup({
       dependencies = { "nvim-lua/plenary.nvim" }
     },
     {
-        'rose-pine/neovim', name = 'rose-pine'
-    },
-    {
         'projekt0n/github-nvim-theme'
     },
     {
@@ -46,6 +43,9 @@ require("lazy").setup({
     {
 	    "nvim-treesitter/nvim-treesitter",
 	    build = ":TSUpdate",
+    },
+    {
+        "nvim-treesitter/nvim-treesitter-textobjects",
     },
     {
 	    'ThePrimeagen/harpoon',
