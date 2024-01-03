@@ -117,6 +117,7 @@ bindkey -s ^f "tmux-sessionizer\n"
 bindkey \^U backward-kill-line
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
