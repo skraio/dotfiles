@@ -110,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
 if [ -x "$(command -v exa)" ]; then
     alias l="exa --long --sort=type --all"
 fi
+alias vim=nvim
 
 bindkey -s ^f "tmux-sessionizer\n"
 

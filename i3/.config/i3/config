@@ -180,8 +180,10 @@ bindsym $win+Shift+h exec systemctl hibernate && i3lock -c 000000
 
 # Run on startup
 exec --no-startup-id brave-browser
+exec --no-startup-id gnome-clocks
 
 assign [class="Brave-browser"] 1
+for_window [class="org.gnome.clocks"] move to workspace 9
 for_window [class="Spotify"] move to workspace 10
 
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets 

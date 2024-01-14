@@ -4,7 +4,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~ ~/git ~/git/grind ~/git/Uni ~/git/go-gym -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~ ~/git ~/git/grind ~/git/Uni ~/git/go-gym ~/git/cpp-gym -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
