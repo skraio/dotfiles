@@ -15,12 +15,17 @@ lsp.on_attach(function(client, bufnr)
           end
         end
     , opts)
-    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
-    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
-    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-    vim.keymap.set("n", "gl", function() vim.diagnostic.open_float() end, opts)
-    vim.keymap.set('n', 'gs', function() vim.lsp.buf.signature_help() end, opts)
-    vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set("n", "]d",  vim.diagnostic.goto_next, opts)
+    vim.keymap.set("n", "[d",  vim.diagnostic.goto_prev, opts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "gl",  vim.diagnostic.open_float, opts)
+    vim.keymap.set('n', 'gs',  vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', 'gd',  vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+
+    vim.keymap.set('n', 'gw', '<cmd>Telescope lsp_references<cr>', {buffer = bufnr})
 end)
 
 lsp.ensure_installed({
@@ -41,3 +46,11 @@ require('lspconfig').gopls.setup({
 	capabilities = capabilities,
 	on_attach = codeNavigationBindings,
 })
+
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+    opts = opts or {}
+    opts.border = opts.border or 'single'
+    opts.max_width = opts.max_width or 100
+    return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end

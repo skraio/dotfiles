@@ -11,7 +11,7 @@ fi
 
 
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="profile,zsh,i3,polybar,alacritty,polybar,nvim,tmux,Code"
+    STOW_FOLDERS="profile,zsh,i3,polybar,alacritty,polybar,nvim,tmux,Code,zathura"
 fi
 
 if [[ -z $DOTFILES ]]; then

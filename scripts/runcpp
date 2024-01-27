@@ -6,6 +6,6 @@ if [ -z "$1" ]; then
 fi
 
 cd "$1"
-g++ -o myprogram main.cpp
-./myprogram
-rm myprogram
+g++ -o sol solution.cpp
+./sol
+rm sol
