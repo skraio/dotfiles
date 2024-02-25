@@ -8,13 +8,7 @@ function()
 end
 )
 
-local actions = require("telescope.actions")
-require("telescope").setup{
-    defaults = {
-        mappings = {
-            i = {
-                ["<esc>"] = "",
-            },
-        },
-    },
-}
+vim.keymap.set('n', '<leader>trr', builtin.lsp_references)
+vim.keymap.set('n', '<leader>tvd', builtin.diagnostics)
+vim.keymap.set('n', '<leader>tgc', builtin.git_commits)
+vim.keymap.set('n', '<leader>tgs', builtin.git_status)

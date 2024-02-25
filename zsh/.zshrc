@@ -111,6 +111,9 @@ if [ -x "$(command -v exa)" ]; then
     alias l="exa --long --sort=type --all"
 fi
 alias vim=nvim
+alias vf=firefox
+alias vb=brave-browser
+alias vz=zathura
 
 bindkey -s ^f "tmux-sessionizer\n"
 
