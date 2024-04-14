@@ -178,13 +178,15 @@ bindsym $mod+Shift+period exec i3lock -c 000000 && systemctl suspend
 # Hibernate
 bindsym $win+Shift+h exec systemctl hibernate && i3lock -c 000000
 
+# Turn off monitor after 30 minutes of idling
+exec xset dpms 0 0 1800
+
 # Run on startup
 exec --no-startup-id brave-browser
 exec --no-startup-id gnome-clocks
 
 assign [class="Brave-browser"] 1
 for_window [class="org.gnome.clocks"] move to workspace 6
-assign [class="Firefox-esr"] 1
 for_window [class="Spotify"] move to workspace 10
 
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets 

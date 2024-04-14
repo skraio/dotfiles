@@ -12,8 +12,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
-vim.keymap.set("n", "<leader>[", ":<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[")
-vim.keymap.set("n", "<leader>]", ":<c-u>put =repeat(nr2char(10), v:count1)<cr>")
+-- vim.keymap.set("n", "<leader>[", ":<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[")
+-- vim.keymap.set("n", "<leader>]", ":<c-u>put =repeat(nr2char(10), v:count1)<cr>")
 
 vim.keymap.set("x", ">", ">gv")
 vim.keymap.set("x", "<", "<gv")
@@ -21,3 +21,4 @@ vim.keymap.set("x", "<", "<gv")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<cr>")
 
 vim.keymap.set("i", "<C-u>", "")
+vim.keymap.set("i", "<C-w>", "")

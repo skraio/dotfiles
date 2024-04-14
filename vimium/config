@@ -17,3 +17,22 @@ map L goForward
 
 map m Marks.activateCreateMode
 map ` Marks.activateGotoMode
+
+map о scrollDown
+map л scrollUp
+map пп scrollToTop
+map П scrollToBottom
+map в scrollPageDown
+map г scrollPageUp
+map р scrollLeft
+map д scrollRight
+
+map а LinkHints.activateMode
+map А LinkHints.activateModeToOpenInNewTab
+
+map Р goBack
+map Д goForward
+
+map м Marks.activateCreateMode
+map ` Marks.activateGotoMode
+

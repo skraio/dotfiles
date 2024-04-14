@@ -27,4 +27,11 @@
     "editor.autoClosingQuotes": "never",
     "editor.autoSurround": "never",
     "sqltools.highlightQuery": false,
+    "explorer.confirmDelete": false,
+    "c4.diagram.structurizr.enabled": true,
+    "c4.diagram.plantuml.enabled": true,
+    "c4.diagram.renderer": "structurizr",
+    "c4.languageserver.connectiontype": "auto",
+    "c4.languageserver.logs.enabled": true,
+    "workbench.colorTheme": "GitHub Light",
 }

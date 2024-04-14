@@ -1,2 +1,2 @@
 # Dotfiles
-The little quirks and preferences that make my computer truly mine.
+The little quirks and preferences that satisfy my inner control freak.

@@ -114,6 +114,7 @@ alias vim=nvim
 alias vf=firefox
 alias vb=brave-browser
 alias vz=zathura
+alias cal="ncal -M -b"
 
 bindkey -s ^f "tmux-sessionizer\n"
 

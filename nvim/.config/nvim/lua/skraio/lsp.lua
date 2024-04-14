@@ -49,6 +49,7 @@ require('lspconfig').gopls.setup({
 	on_attach = on_attach,
 })
 
+-- clangd client configuration
 require('lspconfig').clangd.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
@@ -58,6 +59,6 @@ local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
     opts = opts or {}
     opts.border = opts.border or 'single'
-    opts.max_width = opts.max_width or 100
+    opts.max_width = opts.max_width or 80
     return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
