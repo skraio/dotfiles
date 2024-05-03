@@ -98,4 +98,18 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
         },
     },
+    {
+        "j-hui/fidget.nvim",
+        opts = {
+            -- options
+        },
+    },
+    {
+        "tpope/vim-fugitive",
+    },
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    }
 })

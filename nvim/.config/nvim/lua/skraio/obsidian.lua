@@ -8,7 +8,7 @@ require 'obsidian'.setup {
     workspaces = {
         {
             name = "personal",
-            path = "~/git/knowledge-base/tech",
+            path = "~/git/knowledge-base",
         },
     },
 
@@ -23,16 +23,16 @@ require 'obsidian'.setup {
     -- levels defined by "vim.log.levels.*".
     -- log_level = vim.log.levels.INFO,
 
-    -- daily_notes = {
-    --     -- Optional, if you keep daily notes in a separate directory.
-    --     folder = "notes/dailies",
-    --     -- Optional, if you want to change the date format for the ID of daily notes.
-    --     date_format = "%Y-%m-%d",
-    --     -- Optional, if you want to change the date format of the default alias of daily notes.
-    --     alias_format = "%B %-d, %Y",
-    --     -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-    --     template = nil
-    -- },
+    daily_notes = {
+        -- Optional, if you keep daily notes in a separate directory.
+        folder = "dailies",
+        -- Optional, if you want to change the date format for the ID of daily notes.
+        date_format = "%Y-%m-%d",
+        -- Optional, if you want to change the date format of the default alias of daily notes.
+        alias_format = "%a, %B %-d",
+        -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
+        template = 'daily.md'
+    },
 
     -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
     -- completion = {
@@ -132,8 +132,8 @@ require 'obsidian'.setup {
 
     -- Optional, for templates (see below).
     templates = {
-        subdir = "templates",
-        date_format = "%Y-%m-%d",
+        subdir = "assets/templates",
+        date_format = "%a, %B %-d",
         time_format = "%H:%M",
         -- A map for custom variables, the key should be the variable and the value a function
         substitutions = {},
@@ -203,3 +203,9 @@ require 'obsidian'.setup {
         end,
     },
 }
+
+vim.keymap.set("n", "<leader>oo", vim.cmd.ObsidianOpen)
+vim.keymap.set("n", "<leader>oi", vim.cmd.ObsidianPasteImg)
+vim.keymap.set("n", "<leader>os", vim.cmd.ObsidianTemplate)
+vim.keymap.set("n", "<leader>ot", vim.cmd.ObsidianToday)
+vim.keymap.set("n", "<leader>od", "<cmd>ObsidianDailies -2 1<CR>")
