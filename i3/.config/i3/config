@@ -19,9 +19,9 @@ for_window [tiling] border pixel 0
 for_window [floating] border pixel 1
 
 # class                 border  backgr. text    indicator child_border                                                                     
-client.focused_inactive #000000 #000000 #000000  #000000 #000000                                                                            
-client.unfocused        #000000 #000000 #000000 #000000 #000000                                                                            
-client.focused          #000000 #000000 #000000 #000000 #8ba4b0    
+client.focused_inactive #222222 #222222 #777777 #000000 #000000                                                                            
+client.unfocused        #000000 #000000 #999999 #000000 #000000                                                                            
+client.focused          #222222 #222222 #aaaaaa #000000 #8ba4b0    
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -183,10 +183,9 @@ exec xset dpms 0 0 1800
 
 # Run on startup
 exec --no-startup-id brave-browser
-exec --no-startup-id gnome-clocks
 
 assign [class="Brave-browser"] 1
-for_window [class="org.gnome.clocks"] move to workspace 6
+assign [class="TelegramDesktop"] 5
 for_window [class="Spotify"] move to workspace 10
 
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets 
