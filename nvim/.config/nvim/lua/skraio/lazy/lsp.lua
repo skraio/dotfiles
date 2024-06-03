@@ -16,8 +16,16 @@ return {
     config = function()
 
         local lsp = require('lsp-zero').preset({})
+        local cmp = require('cmp')
 
         vim.g.diagnostics_visible = true
+
+        cmp.setup.filetype({"sql"},{
+            sources = {
+                { name = "vim-dadbod-completion"},
+                { name = "buffer"},
+            },
+        })
 
         lsp.on_attach(function(client, bufnr)
             local opts = {buffer = bufnr, remap = false}
@@ -37,7 +45,7 @@ return {
             vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
             vim.keymap.set("n", "<leader>vd",  vim.diagnostic.open_float, opts)
             vim.keymap.set("n", "gd",  vim.lsp.buf.definition, opts)
-            vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
+            vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition, opts)
             vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
             vim.keymap.set("n", "<leader>orr", vim.lsp.buf.references, opts)
             vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)

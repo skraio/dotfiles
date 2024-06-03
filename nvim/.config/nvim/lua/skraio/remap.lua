@@ -19,3 +19,7 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<cr>")
 
 vim.keymap.set("i", "<C-u>", "")
 vim.keymap.set("i", "<C-w>", "")
+
+vim.keymap.set("n", "Э+нн", "\"+yy")
+vim.keymap.set("v", "Э+н", "\"+y")
+vim.keymap.set("n", "Э+з", "\"+p")

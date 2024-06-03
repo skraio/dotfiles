@@ -112,6 +112,7 @@ if [ -x "$(command -v exa)" ]; then
 fi
 alias vim=nvim
 alias cal="ncal -M -b"
+alias bb=brave-browser
 
 bindkey -s ^f "tmux-sessionizer\n"
 
@@ -135,3 +136,10 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# bun completions
+[ -s "/home/tdk/.bun/_bun" ] && source "/home/tdk/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
