@@ -14,6 +14,8 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 vim.keymap.set("x", ">", ">gv")
 vim.keymap.set("x", "<", "<gv")
+vim.keymap.set("x", "Ю", ">gv")
+vim.keymap.set("x", "Б", "<gv")
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<cr>")
 
@@ -23,3 +25,9 @@ vim.keymap.set("i", "<C-w>", "")
 vim.keymap.set("n", "Э+нн", "\"+yy")
 vim.keymap.set("v", "Э+н", "\"+y")
 vim.keymap.set("n", "Э+з", "\"+p")
+vim.keymap.set("v", "Э+з", "\"+p")
+
+vim.keymap.set("v", "<leader>`", "c``<esc>P")
+
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")

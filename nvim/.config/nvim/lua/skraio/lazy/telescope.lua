@@ -20,6 +20,9 @@ return {
         vim.keymap.set('n', '<leader>tvd', builtin.diagnostics)
         vim.keymap.set('n', '<leader>tgc', builtin.git_commits)
         vim.keymap.set('n', '<leader>tgs', builtin.git_status)
+
+        vim.keymap.set('n', '<leader>tgi', builtin.lsp_implementations)
+        vim.keymap.set('n', '<leader>tic', builtin.lsp_incoming_calls)
     end
 }
 

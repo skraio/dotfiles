@@ -230,9 +230,5 @@ return {
             "<leader>oo",
             vim.cmd.ObsidianOpen,
         },
-        {
-            "<leader>oi",
-            vim.cmd.ObsidianPasteImg,
-        },
     }
 }

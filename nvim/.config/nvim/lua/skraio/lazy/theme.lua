@@ -10,6 +10,7 @@ return {
                 keywordStyle = { italic = false },
                 background = {
                     dark = "dragon",
+                    light = "lotus",
                 },
                 colors = {
                     palette = {
@@ -22,7 +23,11 @@ return {
                     },
                 },
             })
-            vim.cmd("colorscheme kanagawa")
+            -- vim.cmd("colorscheme kanagawa-dragon")
+            vim.cmd("colorscheme kanagawa-lotus")
         end,
+
+        vim.keymap.set("n", "<leader>tl", function() vim.cmd("colorscheme kanagawa-lotus") end),
+        vim.keymap.set("n", "<leader>td", function() vim.cmd("colorscheme kanagawa-dragon") end),
     }
 }
