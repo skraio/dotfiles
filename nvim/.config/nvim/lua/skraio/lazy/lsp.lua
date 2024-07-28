@@ -12,6 +12,36 @@ return {
         { "saadparwaiz1/cmp_luasnip" },
     },
 
+    --[[
+    {
+        "ray-x/go.nvim",
+        dependencies = {
+            "ray-x/guihua.lua",                    -- Optional
+            "nvim-treesitter/nvim-treesitter",     -- Optional
+        },
+        config = function()
+            require("go").setup({
+                lsp_inlay_hints = {
+                    enable = false,
+                    only_current_line = false,
+                    only_current_line_autocmd = "CursorHold",
+                    show_variable_name = true,
+                    show_parameter_hints = true,
+                    parameter_hints_prefix = "<- ",
+                    other_hints_prefix = "=> ",
+                    max_len_align = false,
+                    right_align = false,
+                    right_align_padding = 7,
+                    highlight = "Comment",
+                },
+            })
+        end,
+        event = { "CmdlineEnter" },
+        ft = { "go", "gomod" },
+        build = ':lua require("go.install").update_all_sync()'     -- Install/update all binaries
+    },
+    --]]
+
     config = function()
         local cmp = require('cmp')
         cmp.setup.filetype({ "sql" }, {
@@ -55,6 +85,7 @@ return {
             }
         })
 
+        -- require("go").setup()
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({

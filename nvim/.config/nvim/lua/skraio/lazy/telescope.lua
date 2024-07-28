@@ -14,7 +14,7 @@ return {
 
         vim.keymap.set('n', '<leader>sw', builtin.grep_string, {})
         vim.keymap.set('n', '<leader>sW', function()
-            local word = vim.fn.expand("<cWORD>")
+            local word = vim.fn.expand("<cword>")
             builtin.grep_string({ search = word })
         end)
 
@@ -26,6 +26,8 @@ return {
 
         vim.keymap.set('n', '<leader>tgc', builtin.git_commits)
         vim.keymap.set('n', '<leader>tgs', builtin.git_status)
+
+        vim.keymap.set('n', '<leader>vh', builtin.help_tags)
 
         -- vim.keymap.set('n', '<leader>tgi', builtin.lsp_implementations)
         -- vim.keymap.set('n', '<leader>tic', builtin.lsp_incoming_calls)
