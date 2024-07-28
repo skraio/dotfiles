@@ -31,3 +31,4 @@ vim.keymap.set("v", "<leader>`", "c``<esc>P")
 
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<C-h>", "<cmd>cfirst<CR>zz")

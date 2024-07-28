@@ -27,7 +27,7 @@ return {
             vim.cmd("colorscheme kanagawa-lotus")
         end,
 
-        vim.keymap.set("n", "<leader>tl", function() vim.cmd("colorscheme kanagawa-lotus") end),
-        vim.keymap.set("n", "<leader>td", function() vim.cmd("colorscheme kanagawa-dragon") end),
+        vim.keymap.set("n", "<leader>csl", function() vim.cmd("colorscheme kanagawa-lotus") end),
+        vim.keymap.set("n", "<leader>csd", function() vim.cmd("colorscheme kanagawa-dragon") end),
     }
 }
