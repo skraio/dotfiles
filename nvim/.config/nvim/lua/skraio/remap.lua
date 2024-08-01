@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -32,3 +32,5 @@ vim.keymap.set("v", "<leader>`", "c``<esc>P")
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<C-h>", "<cmd>cfirst<CR>zz")
+
+vim.keymap.set("n", "<C-w>o", "<C-w>ozz")
