@@ -52,20 +52,12 @@ autocmd('LspAttach', {
 
 
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-        vim.keymap.set("n", "<leader>gt", function() vim.lsp.buf.type_definition() end, opts)
+        -- vim.keymap.set("n", "<leader>gt", function() vim.lsp.buf.type_definition() end, opts)
 
         vim.keymap.set("n", "<leader>ref", function() vim.lsp.buf.references() end, opts)
         vim.keymap.set("n", "<leader>imp", function() vim.lsp.buf.implementation() end, opts)
+
         vim.keymap.set("n", "<leader>inc", function() vim.lsp.buf.incoming_calls() end, opts)
-        -- vim.keymap.set("n", "<leader>inc",
-        --     function()
-        --         local current_window = vim.api.nvim_get_current_win()
-        --         vim.lsp.buf.incoming_calls()
-        --         vim.defer_fn(function()
-        --             vim.api.nvim_set_current_win(current_window)
-        --         end, 50)
-        --     end
-        --     , opts)
     end
 })
 
