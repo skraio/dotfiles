@@ -23,8 +23,8 @@ return {
                     },
                 },
             })
-            -- vim.cmd("colorscheme kanagawa-dragon")
-            vim.cmd("colorscheme kanagawa-lotus")
+            vim.cmd("colorscheme kanagawa-dragon")
+            -- vim.cmd("colorscheme kanagawa-lotus")
         end,
 
         vim.keymap.set("n", "<leader>csl", function() vim.cmd("colorscheme kanagawa-lotus") end),
