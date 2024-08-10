@@ -61,7 +61,12 @@ local keys = {
     {
         "<leader>ic",
         "<cmd>Trouble lsp_incoming_calls toggle focus=false win.position=bottom<cr>",
-        desc = "LSP References (Trouble)",
+        desc = "LSP Incoming calls (Trouble)",
+    },
+    {
+        "<leader>oc",
+        "<cmd>Trouble lsp_outgoing_calls toggle focus=false win.position=bottom<cr>",
+        desc = "LSP Outgoing calls (Trouble)",
     },
     {
         "<leader>gt",

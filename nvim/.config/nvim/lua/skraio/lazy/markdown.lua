@@ -9,7 +9,7 @@ return {
 
     init = function()
         local g = vim.g
-        g.mkdp_auto_start = 1
+        g.mkdp_auto_start = 0
     end,
 
     config = function()
@@ -26,11 +26,9 @@ return {
         })
 
         vim.g.mkdp_auto_close = 0
-        vim.g.mkdp_combine_preview = 1
+        vim.g.mkdp_combine_preview = 0
 
-        vim.g.mkdp_theme = 'light'
-
-        -- vim.g.mkdp_browser = 'google-chrome'
+        vim.g.mkdp_theme = 'dark'
 
         vim.keymap.set("n", "<leader>mp", function() vim.cmd("MarkdownPreview") end)
     end,

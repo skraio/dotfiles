@@ -8,8 +8,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
-set $win Mod4
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -18,10 +17,10 @@ font pango:monospace 11px
 for_window [tiling] border pixel 0
 for_window [floating] border pixel 1
 
-# class                 border  backgr. text    indicator child_border                                                                     
-client.focused_inactive #222222 #222222 #777777 #000000 #000000                                                                            
-client.unfocused        #000000 #000000 #999999 #000000 #000000                                                                            
-client.focused          #222222 #222222 #aaaaaa #000000 #8ba4b0    
+# class                 border  backgr. text    indicator child_border
+client.focused_inactive #222222 #222222 #777777 #000000 #000000
+client.unfocused        #000000 #000000 #999999 #000000 #000000
+client.focused          #222222 #222222 #aaaaaa #000000 #8ba4b0
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -170,13 +169,13 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id nm-applet
 
 ## Clipboard Screenshots
-bindsym $win+Shift+s exec flameshot gui
+bindsym $mod+Shift+s exec flameshot gui
 
 # Suspend
 bindsym $mod+Shift+period exec i3lock -c 000000 && systemctl suspend
 
 # Hibernate
-bindsym $win+Shift+h exec systemctl hibernate && i3lock -c 000000
+# bindsym $win+Shift+h exec systemctl hibernate && i3lock -c 000000
 
 # Turn off monitor after 30 minutes of idling
 exec xset dpms 0 0 1800
@@ -188,7 +187,7 @@ assign [class="Brave-browser"] 1
 assign [class="TelegramDesktop"] 5
 for_window [class="Spotify"] move to workspace 10
 
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets 
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
 #Polybar Launch Script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
