@@ -185,7 +185,7 @@ exec --no-startup-id brave-browser
 
 assign [class="Brave-browser"] 0
 assign [class="TelegramDesktop"] 3
-for_window [class="Spotify"] move to workspace 6
+for_window [class="Spotify"] move to workspace 9
 
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
