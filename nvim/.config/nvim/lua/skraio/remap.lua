@@ -17,6 +17,9 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<cr>")
 vim.keymap.set("i", "<C-u>", "")
 vim.keymap.set("i", "<C-w>", "")
 
+vim.keymap.set("n", "dd", "")
+vim.keymap.set("n", "yy", "")
+
 vim.keymap.set("v", "<leader>`", "c``<esc>P")
 
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
