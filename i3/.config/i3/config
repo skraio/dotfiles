@@ -183,9 +183,9 @@ exec xset dpms 0 0 1800
 # Run on startup
 exec --no-startup-id brave-browser
 
-assign [class="Brave-browser"] 1
-assign [class="TelegramDesktop"] 4
-for_window [class="Spotify"] move to workspace 6
+assign [class="Brave-browser"] 4
+assign [class="TelegramDesktop"] 6
+for_window [class="Spotify"] move to workspace 3
 
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
