@@ -25,7 +25,7 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80,120"
+vim.opt.colorcolumn = "100"
 
 vim.opt.textwidth = 120
 
