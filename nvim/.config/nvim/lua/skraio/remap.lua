@@ -21,9 +21,12 @@ vim.keymap.set("n", "dd", "")
 vim.keymap.set("n", "yy", "")
 
 vim.keymap.set("v", "<leader>`", "c``<esc>P")
+vim.keymap.set("n", "<leader>`", "viWc``<esc>P")
 
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<C-h>", "<cmd>cfirst<CR>zz")
 
 vim.keymap.set("n", "<C-w>o", "<C-w>ozz")
+
+

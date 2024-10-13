@@ -27,6 +27,8 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80,120"
 
+vim.opt.textwidth = 120
+
 vim.g.mapleader = " "
 
 vim.opt.langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
