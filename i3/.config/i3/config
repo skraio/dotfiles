@@ -183,7 +183,7 @@ exec xset dpms 0 0 1800
 # Run on startup
 exec --no-startup-id brave-browser
 
-assign [class="Brave-browser"] 4
+assign [class="Google-chrome"] 4
 assign [class="TelegramDesktop"] 3
 for_window [class="Spotify"] move to workspace 9
 

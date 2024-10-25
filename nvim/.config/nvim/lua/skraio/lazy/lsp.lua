@@ -27,10 +27,7 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "pylsp",
-                "gopls",
                 "clangd",
-                -- "dockerls",
-                -- "jsonls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
