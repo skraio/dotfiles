@@ -25,9 +25,9 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "120"
 
-vim.opt.textwidth = 100
+-- vim.opt.textwidth = 100
 
 vim.g.mapleader = " "
 

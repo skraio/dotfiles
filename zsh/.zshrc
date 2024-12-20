@@ -106,13 +106,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# 
+#
 if [ -x "$(command -v exa)" ]; then
     alias l="exa --long --sort=type --all"
 fi
 alias vim=nvim
 alias cal="ncal -M -b"
-alias bb=brave-browser
 
 bindkey -s ^f "tmux-sessionizer\n"
 
