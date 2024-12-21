@@ -76,6 +76,25 @@ return {
             })
         })
 
+        vim.g.autocomplete_enabled = true
+
+        vim.keymap.set("n", "<leader>ta",
+            function()
+                if vim.g.autocomplete_enabled then
+                    vim.g.autocomplete_enabled = false
+                    require('cmp').setup({
+                        enabled = function() return false end,
+                    })
+                    print("Autocomplete Disabled")
+                else
+                    vim.g.autocomplete_enabled = true
+                    require('cmp').setup({
+                        enabled = function() return true end,
+                    })
+                    print("Autocomplete Enabled")
+                end
+            end, { noremap = true, silent = true })
+
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
         -- This line disables snippets. Note that disabling snippets has side-effects
         -- like not including parens on autocomplete.
