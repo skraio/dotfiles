@@ -76,7 +76,12 @@ return {
             })
         })
 
+        -- toggle autocomplete
         vim.g.autocomplete_enabled = true
+
+        -- require('cmp').setup({
+        --     enabled = function() return vim.g.autocomplete_enabled end,
+        -- })
 
         vim.keymap.set("n", "<leader>ta",
             function()

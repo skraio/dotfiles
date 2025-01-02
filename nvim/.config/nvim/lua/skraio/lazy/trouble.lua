@@ -39,8 +39,8 @@ local keys = {
         desc = "Symbols (Trouble)",
     },
     {
-        "<leader>xl",
-        "<cmd>Trouble lsp toggle focus=false win.position=bottom<cr>",
+        "<leader>K",
+        "<cmd>Trouble lsp toggle focus=false win.position=right win.size.width=48<cr>",
         desc = "LSP Definitions / references / ... (Trouble)",
     },
     {
