@@ -66,7 +66,8 @@ return {
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
                 ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-                ["<C-Space>"] = cmp.mapping.complete(),
+                ["<C-o>"] = cmp.mapping.complete(),
+                ['<C-e>'] = cmp.mapping.close(),
             }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
@@ -99,6 +100,7 @@ return {
                     print("Autocomplete Enabled")
                 end
             end, { noremap = true, silent = true })
+
 
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
         -- This line disables snippets. Note that disabling snippets has side-effects

@@ -28,3 +28,7 @@ vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<C-h>", "<cmd>cfirst<CR>zz")
 
 vim.keymap.set("n", "<C-w>o", "<C-w>ozz")
+
+vim.keymap.set("n", "<leader>sfs", "<cmd>set foldmethod=syntax<cr>", { desc = "set foldmethod" })
+
+vim.keymap.set("n", "\"i", vim.cmd.reg, { desc = "" })

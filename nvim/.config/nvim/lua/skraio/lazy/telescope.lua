@@ -19,6 +19,6 @@ return {
         end)
         vim.keymap.set('n', '<leader>sl', builtin.live_grep, {})
 
-        vim.keymap.set('n', '<leader>vh', builtin.help_tags)
+        vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = "Telescope: Show help tags" })
     end
 }
