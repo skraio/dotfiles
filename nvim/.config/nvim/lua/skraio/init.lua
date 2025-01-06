@@ -63,6 +63,7 @@ autocmd('LspAttach', {
         vim.keymap.set("n", "<leader>ii", function() vim.lsp.buf.implementation() end, opts, {desc = "LSP: implementation"})
 
         vim.keymap.set("n", "<leader>ic", function() vim.lsp.buf.incoming_calls() end, opts, {desc = "LSP: incoming calls"})
+        vim.keymap.set("n", "<leader>oc", function() vim.lsp.buf.outgoing_calls() end, opts, {desc = "LSP: outgoing calls"})
     end
 })
 

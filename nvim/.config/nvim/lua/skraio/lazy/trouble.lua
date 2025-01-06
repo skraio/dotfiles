@@ -65,7 +65,7 @@ local keys = {
     },
     {
         "<leader>Oc",
-        "<cmd>Trouble lsp_outgoing_calls toggle focus=false win.position=bottom<cr>",
+        "<cmd>Trouble lsp_outgoing_calls toggle focus=true win.position=right win.size.width=48<cr>",
         desc = "LSP Outgoing calls (Trouble)",
     },
     {

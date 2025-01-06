@@ -180,7 +180,7 @@ bindsym $mod+Shift+period exec i3lock -c 000000 && systemctl suspend
 # Turn off monitor after 30 minutes of idling
 exec xset dpms 0 0 1800
 
-assign [class="Google-chrome"] 4
+assign [class="Google-chrome"] 6
 assign [class="TelegramDesktop"] 3
 for_window [class="Spotify"] move to workspace 9
 

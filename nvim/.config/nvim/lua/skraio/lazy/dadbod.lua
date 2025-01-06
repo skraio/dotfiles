@@ -25,7 +25,6 @@ return {
             })
 
             vim.keymap.set("n", "<leader>Db", function()
-                vim.cmd.tabnew()
                 vim.cmd.DBUIToggle()
             end)
         end,
