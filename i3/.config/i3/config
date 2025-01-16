@@ -90,7 +90,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+Tab focus mode_toggle
@@ -180,8 +180,8 @@ bindsym $mod+Shift+period exec i3lock -c 000000 && systemctl suspend
 # Turn off monitor after 30 minutes of idling
 exec xset dpms 0 0 1800
 
-assign [class="Google-chrome"] 6
-assign [class="TelegramDesktop"] 3
+# assign [class="Google-chrome"] 4
+# assign [class="TelegramDesktop"] 3
 for_window [class="Spotify"] move to workspace 9
 
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
