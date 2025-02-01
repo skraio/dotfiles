@@ -54,7 +54,7 @@ local keys = {
         desc = "LSP Implementations (Trouble)",
     },
     {
-        "<leader>gr",
+        "<leader>ref",
         "<cmd>Trouble lsp_references toggle focus=false win.position=bottom<cr>",
         desc = "LSP References (Trouble)",
     },

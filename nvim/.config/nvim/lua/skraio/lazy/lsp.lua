@@ -107,10 +107,26 @@ return {
         -- like not including parens on autocomplete.
         capabilities.textDocument.completion.completionItem.snippetSupport = false
 
+
+        require('lspconfig').terraformls.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        require('lspconfig').tflint.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
         -- gopls client configuration.
         require('lspconfig').gopls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            settings = {
+                gopls = {
+                    buildFlags = { "-tags=integration" }
+                }
+            }
         })
 
         -- clangd client configuration
