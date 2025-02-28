@@ -4,20 +4,15 @@ return {
         build = ":TSUpdate",
 
         config = function()
-            require'nvim-treesitter.configs'.setup {
-                -- A list of parser names, or "all" (the five listed parsers should always be installed)
-                ensure_installed = {"bash", "python", "go", "c", "lua", "vim", "vimdoc", "query", "xml", "http", "json", "graphql"},
+            require 'nvim-treesitter.configs'.setup {
+                -- -- A list of parser names, or "all" (the five listed parsers should always be installed)
+                ensure_installed = { "bash", "python", "go", "c", "lua", "vim", "vimdoc", "query", "xml", "http", "json", "graphql" },
 
-                -- Install parsers synchronously (only applied to `ensure_installed`)
+                -- -- Install parsers synchronously (only applied to `ensure_installed`)
                 sync_install = false,
-
-                -- Automatically install missing parsers when entering buffer
-                -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-                auto_install = true,
 
                 highlight = {
                     enable = true,
-                    disable = {"latex"},
 
                     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
                     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
@@ -29,7 +24,7 @@ return {
                 textobjects = {
                     move = {
                         enable = true,
-                        set_jumps = true, -- whether to set jumps in the jumplist
+                        set_jumps = true,  -- whether to set jumps in the jumplist
                         goto_next_start = {
                             ["]f"] = "@function.outer",
                         },
@@ -45,4 +40,3 @@ return {
         "nvim-treesitter/nvim-treesitter-textobjects",
     }
 }
-
