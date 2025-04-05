@@ -8,7 +8,6 @@ return {
         require('render-markdown').setup({
             code = {
                 width = 'block',
-                min_width = 100,
                 sign = false,
             },
             heading = {
