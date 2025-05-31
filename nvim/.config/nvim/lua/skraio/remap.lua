@@ -33,3 +33,9 @@ vim.keymap.set("n", "<leader>sfs", "<cmd>set foldmethod=syntax<cr>", { desc = "s
 vim.keymap.set("n", "\"i", vim.cmd.reg, { desc = "" })
 
 vim.keymap.set("n", "<leader>go", "<cmd>!go run %<cr>")
+
+vim.keymap.set("n", "<leader>GG", function ()
+    vim.cmd("Gwrite")
+    vim.cmd("G commit -m 'upd'")
+    vim.cmd("G push")
+end)

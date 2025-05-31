@@ -28,6 +28,8 @@ return {
                 "lua_ls",
                 "pylsp",
                 "clangd",
+                "jsonls",
+                "yamlls"
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -125,6 +127,25 @@ return {
             settings = {
                 gopls = {
                     buildFlags = { "-tags=integration" }
+                }
+            }
+        })
+
+        require('lspconfig').yamlls.setup({
+            capabilities = capabilities,
+            local_on_attach = function(client, buffer)
+                client.resolved_capabilities.document_formatting = true
+            end,
+            on_attach = local_on_attach,
+            flags = lsp_flags,
+            settings = {
+                yaml = {
+                    format = {
+                        enable = true
+                    },
+                    schemaStore = {
+                        enable = true
+                    }
                 }
             }
         })
