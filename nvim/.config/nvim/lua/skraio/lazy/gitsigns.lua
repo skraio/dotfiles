@@ -1,7 +1,6 @@
 return {
     "lewis6991/gitsigns.nvim",
     config = function()
-
         require('gitsigns').setup({
             signs                        = {
                 add          = { text = '┃' },
@@ -51,7 +50,7 @@ return {
                 col = 1
             },
 
-            on_attach = function(bufnr)
+            on_attach                    = function(bufnr)
                 local gitsigns = require('gitsigns')
 
                 local function map(mode, l, r, opts)
@@ -77,7 +76,32 @@ return {
                     end
                 end)
 
-                map('n', '<leader>hp', gitsigns.preview_hunk)
+                map('n', '<leader>ghp', gitsigns.preview_hunk)
+
+                map('n', '<leader>ghs', gitsigns.stage_hunk)
+                map('v', '<space>ghs', function() gitsigns.stage_hunk { vim.fn.line('.'), vim.fn.line('v') } end)
+
+                map('n', '<leader>ghr', gitsigns.reset_hunk)
+                map('v', '<leader>ghr', function() gitsigns.reset_hunk { vim.fn.line('.'), vim.fn.line('v') } end)
+
+                map('n', '<leader>ghq', function()
+                    vim.api.nvim_feedkeys(":Gitsigns setqflist ", "n", false)
+                end)
+
+                map('n', '<leader>ghb', function()
+                    vim.api.nvim_feedkeys(":Gitsigns change_base ", "n", false)
+                end)
+
+                map('n', '<leader>ghB', gitsigns.reset_base)
+
+                map('n', '<leader>gbl', gitsigns.blame_line)
+                map('n', '<leader>gbL', function()
+                    gitsigns.blame_line { full = true }
+                end)
+
+                map('n', '<leader>ghS', gitsigns.stage_buffer)
+
+                map('n', '<leader>ghU', gitsigns.reset_buffer)
             end
         })
     end
