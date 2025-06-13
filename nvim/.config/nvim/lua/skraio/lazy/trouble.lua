@@ -1,8 +1,22 @@
 local keys = {
-    { "<leader>xb", function() require("trouble").toggle({ mode = "diagnostics", filter = { buf = 0 } }) end, desc = "Buffer Diagnostics (Trouble)", mode = "n" },
-    { "<leader>xp", function() require("trouble").toggle({ mode = "diagnostics" }) end,                       desc = "Diagnostics (Trouble)",        mode = "n" },
     {
-        "<leader>xq",
+        "<leader>ld",
+        function()
+            require("trouble").toggle({ mode = "diagnostics", filter = { buf = 0 } })
+        end,
+        desc = "Buffer Diagnostics (Trouble)",
+        mode = "n"
+    },
+    {
+        "<leader>lD",
+        function()
+            require("trouble").toggle({ mode = "diagnostics" })
+        end,
+        desc = "Diagnostics (Trouble)",
+        mode = "n"
+    },
+    {
+        "<leader>lq",
         function()
             require("trouble").close()
         end,
@@ -34,42 +48,42 @@ local keys = {
         mode = "n",
     },
     {
-        "<leader>xs",
+        "<leader>lts",
         "<cmd>Trouble symbols toggle focus=false win.position=right win.size.width=42<cr>",
         desc = "Symbols (Trouble)",
     },
     {
-        "<leader>K",
+        "<leader>ll",
         "<cmd>Trouble lsp toggle focus=false win.position=right win.size.width=48<cr>",
         desc = "LSP Definitions / references / ... (Trouble)",
     },
     {
-        "<leader>gd",
+        "<leader>lgd",
         "<cmd>Trouble lsp_definitions toggle focus=false win.position=bottom<cr>",
         desc = "LSP Definitions (Trouble)",
     },
     {
-        "<leader>gi",
+        "<leader>lgi",
         "<cmd>Trouble lsp_implementations toggle focus=false win.position=bottom<cr>",
         desc = "LSP Implementations (Trouble)",
     },
     {
-        "<leader>ref",
+        "<leader>lrr",
         "<cmd>Trouble lsp_references toggle focus=false win.position=bottom<cr>",
         desc = "LSP References (Trouble)",
     },
     {
-        "<leader>Ic",
+        "<leader>lic",
         "<cmd>Trouble lsp_incoming_calls toggle focus=false win.position=bottom<cr>",
         desc = "LSP Incoming calls (Trouble)",
     },
     {
-        "<leader>Oc",
+        "<leader>loc",
         "<cmd>Trouble lsp_outgoing_calls toggle focus=true win.position=right win.size.width=48<cr>",
         desc = "LSP Outgoing calls (Trouble)",
     },
     {
-        "<leader>gt",
+        "<leader>lgt",
         "<cmd>Trouble lsp_type_definitions focus=false win.position=bottom<cr>",
         desc = "LSP Type Definitions (Trouble)",
     },

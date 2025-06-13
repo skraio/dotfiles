@@ -1,5 +1,10 @@
 -- vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
 
+vim.keymap.set({ "n", "v"}, "<leader>y", "\"+y")
+vim.keymap.set({ "n", "v"}, "<leader>p", "\"+p")
+vim.keymap.set({ "n", "v"}, "<leader>Y", "\"+Y")
+vim.keymap.set({ "n", "v"}, "<leader>P", "\"+P")
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -32,10 +37,32 @@ vim.keymap.set("n", "<leader>sfs", "<cmd>set foldmethod=syntax<cr>", { desc = "s
 
 vim.keymap.set("n", "\"i", vim.cmd.reg, { desc = "" })
 
-vim.keymap.set("n", "<leader>go", "<cmd>!go run %<cr>")
+vim.keymap.set("n", "<leader>xg", "<cmd>!go run %<cr>")
 
-vim.keymap.set("n", "<leader>GG", function ()
+
+vim.keymap.set("n", "<leader>xb", function ()
+    vim.cmd("write")
+    -- local file = vim.fn.expand("%:p")
+    -- vim.cmd("split | terminal bash " .. file)
+    vim.cmd("!bash %")
+end)
+
+vim.keymap.set("n", "<leader>xp", function ()
+    vim.cmd("write")
+    local file = vim.fn.expand("%:p")
+    vim.cmd("split | terminal python " .. file)
+    -- vim.cmd("!python %")
+end)
+
+vim.keymap.set("n", "<leader>GC", function ()
     vim.cmd("Gwrite")
-    vim.cmd("G commit -m 'upd'")
-    vim.cmd("G push")
+    vim.cmd("G commit")
+end)
+
+vim.keymap.set("n", "<leader>GF", function ()
+    -- vim.cmd("bufdo if &modified | update | Gwrite | endif")
+    vim.cmd("silent! wa")
+    vim.cmd("silent! G add .")
+    vim.cmd("silent! G commit -m 'upd'")
+    vim.cmd("silent! G push")
 end)

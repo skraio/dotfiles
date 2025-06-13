@@ -1,6 +1,7 @@
 return {
     "lewis6991/gitsigns.nvim",
     config = function()
+
         require('gitsigns').setup({
             signs                        = {
                 add          = { text = '┃' },
@@ -77,7 +78,6 @@ return {
                 end)
 
                 map('n', '<leader>hp', gitsigns.preview_hunk)
-                map('n', '<leader>gp', gitsigns.blame)
             end
         })
     end

@@ -6,18 +6,19 @@ return {
     opts = {},
     config = function()
         require('render-markdown').setup({
+            enabled=false,
             code = {
-                width = 'block',
                 sign = false,
+                width = 'block',
             },
             heading = {
                 width = 'block',
                 min_width = 100,
-                -- icons = { " "},
             },
             dash = {
                 width = 100,
             },
         })
+        vim.keymap.set("n", "<leader>rt", "<CMD>RenderMarkdown toggle<CR>")
     end
 }

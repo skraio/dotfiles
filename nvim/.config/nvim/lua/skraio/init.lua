@@ -28,11 +28,11 @@ autocmd('LspAttach', {
         local opts = { buffer = e.buf }
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
         vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-        vim.keymap.set("n", "<leader>td", -- TODO diagnostics deprecated
+        vim.keymap.set("n", "<leader>td",
             function()
                 if vim.g.diagnostics_visible then
                     vim.g.diagnostics_visible = false
-                    vim.diagnostic.disable()
+                    vim.diagnostic.enable(false)
                 else
                     vim.g.diagnostics_visible = true
                     vim.diagnostic.enable()
@@ -76,3 +76,12 @@ autocmd('LspAttach', {
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "json",
+    callback = function(ev)
+        -- vim.bo.formatexpr = "v:lua.vim.lsp.formatexpr()"
+        vim.bo[ev.buf].formatprg = "jq"
+        print("It's a json file")
+    end,
+})

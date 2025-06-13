@@ -24,12 +24,26 @@ return {
         require("mason").setup()
 
         require("mason-lspconfig").setup({
+            automatic_enable = {
+                "lua_ls",
+                "vimls",
+                "jsonls",
+            },
+
+            -- terraform: tflint, terraformls
+            -- bash: bashls,, shellcheck, shfmt
+            -- latex: texlab
+            -- sql: sqlls
+            -- python: pylsp, ruff
+            -- go: gopls, golangci-lint
+            -- markdown: marksman
             ensure_installed = {
+                "bashls",
+                "jsonls",
+                "clangd",
                 "lua_ls",
                 "pylsp",
-                "clangd",
-                "jsonls",
-                "yamlls"
+                "yamlls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -120,6 +134,36 @@ return {
             on_attach = on_attach,
         })
 
+        -- require('lspconfig').ruff.setup({})
+        -- pylsp client configuration.
+        require('lspconfig').pylsp.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = {
+                pylsp = {
+                    plugins = {
+                        -- formatter options
+                        black = { enabled = true },
+                        autopep8 = { enabled = false },
+                        yapf = { enabled = false },
+                        -- linter options
+                        pylint = { enabled = true, executable = "pylint", args = { "--rcfile=~/pylintrc" } },
+                        pyflakes = { enabled = false },
+                        pycodestyle = { enabled = false },
+                        -- type checker
+                        pylsp_mypy = { enabled = true },
+                        -- auto-completion options
+                        jedi_completion = { fuzzy = true },
+                        -- import sorting
+                        pyls_isort = { enabled = true },
+                    },
+                },
+            },
+            flags = {
+                debounce_text_changes = 200,
+            },
+        })
+
         -- gopls client configuration.
         require('lspconfig').gopls.setup({
             capabilities = capabilities,
@@ -131,6 +175,7 @@ return {
             }
         })
 
+        -- yamlls client configuration
         require('lspconfig').yamlls.setup({
             capabilities = capabilities,
             local_on_attach = function(client, buffer)
@@ -150,6 +195,12 @@ return {
             }
         })
 
+        -- bashls client configuration
+        require('lspconfig').bashls.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
         -- clangd client configuration
         require('lspconfig').clangd.setup({
             capabilities = capabilities,
@@ -160,7 +211,7 @@ return {
         function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
             opts = opts or {}
             opts.border = opts.border or 'rounded'
-            opts.max_width = opts.max_width or 80
+            opts.max_width = opts.max_width or 120
             return orig_util_open_floating_preview(contents, syntax, opts, ...)
         end
     end
