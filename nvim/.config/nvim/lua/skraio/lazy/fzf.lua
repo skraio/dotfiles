@@ -6,34 +6,31 @@ return {
         local fzflua = require("fzf-lua")
 
         --- files and buffers
-        vim.keymap.set({ 'n' }, '<leader>ob', function()
-            fzflua.buffers({ winopts = { preview = { hidden = "hidden" } } })
-        end, {})
-
-        vim.keymap.set({ 'n' }, '<leader>ol', function()
-            fzflua.blines()
-        end, {})
-
-        vim.keymap.set({ 'n' }, '<leader>oL', function()
-            fzflua.lines()
-        end, {})
-
-        vim.keymap.set({ 'n' }, '<leader>fd', function()
+        vim.keymap.set({ 'n' }, '<leader>df', function()
             fzflua.files()
         end, {})
 
+        vim.keymap.set({ 'n' }, '<leader>bf', function()
+            fzflua.buffers()
+        end, {})
+
+        vim.keymap.set({ 'n' }, '<leader>bl', function()
+            fzflua.blines()
+        end, {})
+
+        vim.keymap.set({ 'n' }, '<leader>Bl', function()
+            fzflua.lines()
+        end, {})
+
         vim.keymap.set({ 'n' }, '<leader>fo', function()
-            fzflua.oldfiles({
-                cwd_only = true,
-                winopts = { preview = { hidden = "hidden" } }
-            })
+            fzflua.oldfiles({ cwd = vim.uv.cwd(), cwd_header = true, cwd_only = true })
         end, {})
 
         vim.keymap.set({ 'n' }, '<leader>fO', function()
             fzflua.oldfiles({ winopts = { preview = { hidden = "hidden" } } })
         end, {})
 
-        vim.keymap.set({ 'n' }, '<leader>fc', function()
+        vim.keymap.set({ 'n' }, '<leader>cf', function()
             fzflua.files({
                 cwd = vim.fn.expand('%:p:h'),
                 winopts = { preview = { hidden = "hidden" } }
@@ -73,20 +70,32 @@ return {
 
         -- grep
 
+        vim.keymap.set({ 'n' }, '<leader>fw', function()
+            fzflua.blines({ query = vim.fn.expand("<cword>") })
+        end, {})
+
         vim.keymap.set({ 'n' }, '<leader>sw', function()
+            fzflua.grep_curbuf({ search = vim.fn.expand("<cword>") })
+        end, {})
+
+        vim.keymap.set({ 'n' }, '<leader>*w', function()
             fzflua.grep_cword()
         end, {})
 
-        vim.keymap.set({ 'n' }, '<leader>sW', function()
-            fzflua.grep_cWORD()
+        vim.keymap.set({ 'n' }, '<leader>fW', function()
+            fzflua.blines({ query = vim.fn.expand("<cWORD>") })
         end, {})
 
-        vim.keymap.set({ 'n' }, '<leader>gW', function()
+        vim.keymap.set({ 'n' }, '<leader>sW', function()
             fzflua.grep_curbuf({ search = vim.fn.expand("<cWORD>") })
         end, {})
 
-        vim.keymap.set({ 'n' }, '<leader>gw', function()
-            fzflua.blines({ query = vim.fn.expand("<cWORD>") })
+        vim.keymap.set({ 'n' }, '<leader>*W', function()
+            fzflua.grep_cWORD()
+        end, {})
+
+        vim.keymap.set({ 'v' }, '<leader>fv', function()
+            fzflua.grep_visual({})
         end, {})
 
         vim.keymap.set({ 'n' }, '<leader>sl', function()
@@ -95,10 +104,6 @@ return {
 
         vim.keymap.set({ 'n' }, '<leader>sc', function()
             fzflua.lgrep_curbuf()
-        end, {})
-
-        vim.keymap.set({ 'v' }, '<leader>sv', function()
-            fzflua.grep_visual({})
         end, {})
 
         vim.keymap.set({ 'n' }, '<leader>sq', function()
