@@ -30,6 +30,8 @@ return {
 
         vim.g.mkdp_theme = 'dark'
 
-        vim.keymap.set("n", "<leader>mp", function() vim.cmd("MarkdownPreview") end)
+        vim.keymap.set("n", "<leader>mp", function()
+            vim.cmd("MarkdownPreview")
+        end, { desc = "Markdown: Toggle Markdown preview" })
     end,
 }

@@ -76,32 +76,53 @@ return {
                     end
                 end)
 
-                map('n', '<leader>ghp', gitsigns.preview_hunk)
+                map('n', '<leader>ghp', function()
+                    gitsigns.preview_hunk()
+                end, { desc = "Gitsigns: Preview current hunk" })
 
-                map('n', '<leader>ghs', gitsigns.stage_hunk)
-                map('v', '<space>ghs', function() gitsigns.stage_hunk { vim.fn.line('.'), vim.fn.line('v') } end)
+                map('n', '<leader>ghs', function()
+                    gitsigns.stage_hunk()
+                end, { desc = "Gitsigns: Stage current hunk" })
 
-                map('n', '<leader>ghr', gitsigns.reset_hunk)
-                map('v', '<leader>ghr', function() gitsigns.reset_hunk { vim.fn.line('.'), vim.fn.line('v') } end)
+                map('v', '<space>ghs', function()
+                    gitsigns.stage_hunk { vim.fn.line('.'), vim.fn.line('v') }
+                end, { desc = "Gitsigns: Stage selected lines (visual mode)" })
+
+                map('n', '<leader>ghr', function()
+                    gitsigns.reset_hunk()
+                end, { desc = "Gitsigns: Reset current hunk" })
+
+                map('v', '<leader>ghr', function()
+                    gitsigns.reset_hunk { vim.fn.line('.'), vim.fn.line('v') }
+                end, { desc = "Gitsigns: Reset selected lines (visual mode)" })
 
                 map('n', '<leader>ghq', function()
                     vim.api.nvim_feedkeys(":Gitsigns setqflist ", "n", false)
-                end)
+                end, { desc = "Gitsigns: Send hunks to quickfix list" })
 
                 map('n', '<leader>ghb', function()
                     vim.api.nvim_feedkeys(":Gitsigns change_base ", "n", false)
-                end)
+                end, { desc = "Gitsigns: Change base commit for diff" })
 
-                map('n', '<leader>ghB', gitsigns.reset_base)
+                map('n', '<leader>ghB', function()
+                    gitsigns.reset_base()
+                end, { desc = "Gitsigns: Reset base commit" })
 
-                map('n', '<leader>gbl', gitsigns.blame_line)
+                map('n', '<leader>gbl', function()
+                    gitsigns.blame_line()
+                end, { desc = "Gitsigns: Show git blame for current line" })
+
                 map('n', '<leader>gbL', function()
                     gitsigns.blame_line { full = true }
-                end)
+                end, { desc = "Gitsigns: Show full git blame info for current line" })
 
-                map('n', '<leader>ghS', gitsigns.stage_buffer)
+                map('n', '<leader>ghS', function()
+                    gitsigns.stage_buffer()
+                end, { desc = "Gitsigns: Stage entire buffer" })
 
-                map('n', '<leader>ghU', gitsigns.reset_buffer)
+                map('n', '<leader>ghU', function()
+                    gitsigns.reset_buffer()
+                end, { desc = "Gitsigns: Reset entire buffer" })
             end
         })
     end

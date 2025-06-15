@@ -229,16 +229,24 @@ return {
                 },
             },
         })
-        vim.keymap.set("v", "<leader>gds", "<Esc><Cmd>'<,'>DiffviewFileHistory --follow<CR>", { desc = "Git log with diff for visual selection" })
-        vim.keymap.set("n", "<leader>gdf", "<Cmd>DiffviewFileHistory --follow %<CR>", { desc = "Git log with diff for current file" })
-        vim.keymap.set("n", "<leader>gda", "<Cmd>DiffviewFileHistory<CR>", { desc = "Git log with diff for all files" })
+        vim.keymap.set("v", "<leader>gds", function()
+            vim.cmd("'<,'>DiffviewFileHistory --follow")
+        end, { desc = "Diffview: Git history (diff) for selected lines" })
 
-        vim.keymap.set("n", "<leader>gdh", function ()
+        vim.keymap.set("n", "<leader>gdf", function()
+            vim.cmd("DiffviewFileHistory --follow %")
+        end, { desc = "Diffview: Git history (diff) for current file" })
+
+        vim.keymap.set("n", "<leader>gda", function()
+            vim.cmd("DiffviewFileHistory")
+        end, { desc = "Diffview: Git history (diff) for entire project" })
+
+        vim.keymap.set("n", "<leader>gdh", function()
             vim.api.nvim_feedkeys(":DiffviewOpen HEAD", "n", false)
-        end, { desc = "Git diff against HEAD" })
+        end, { desc = "Diffview: Diff working tree vs HEAD" })
 
-        vim.keymap.set("n", "<leader>gdt", function ()
+        vim.keymap.set("n", "<leader>gdt", function()
             vim.api.nvim_feedkeys(":DiffviewOpen ", "n", false)
-        end, { desc = "Git diff against target" })
+        end, { desc = "Diffview: Diff working tree vs selected revision" })
     end
 }

@@ -6,7 +6,7 @@ return {
     opts = {},
     config = function()
         require('render-markdown').setup({
-            enabled=false,
+            enabled = false,
             code = {
                 sign = false,
                 width = 'block',
@@ -19,6 +19,9 @@ return {
                 width = 100,
             },
         })
-        vim.keymap.set("n", "<leader>rt", "<CMD>RenderMarkdown toggle<CR>")
+
+        vim.keymap.set("n", "<leader>rt", function()
+            vim.cmd("RenderMarkdown toggle")
+        end, { desc = "Markdown: Toggle RenderMarkdown preview" })
     end
 }

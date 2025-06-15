@@ -4,88 +4,114 @@ local keys = {
         function()
             require("trouble").toggle({ mode = "diagnostics", filter = { buf = 0 } })
         end,
-        desc = "Buffer Diagnostics (Trouble)",
-        mode = "n"
+        desc = "Trouble: Buffer Diagnostics",
+        mode = "n",
     },
     {
         "<leader>lD",
         function()
             require("trouble").toggle({ mode = "diagnostics" })
         end,
-        desc = "Diagnostics (Trouble)",
-        mode = "n"
+        desc = "Trouble: Workspace Diagnostics",
+        mode = "n",
     },
     {
         "<leader>lq",
         function()
             require("trouble").close()
         end,
-        desc = "Close (Trouble)",
-        mode = "n"
+        desc = "Trouble: Close",
+        mode = "n",
     },
     {
         "]t",
         function()
-            if not require("trouble").is_open() then
-                require("trouble").open({ mode = "diagnostics" })
+            local trouble = require("trouble")
+            if not trouble.is_open() then
+                trouble.open({ mode = "diagnostics" })
             else
-                require("trouble").next({ skip_groups = true, jump = true })
+                trouble.next({ skip_groups = true, jump = true })
             end
         end,
-        desc = "Next diagnostic",
+        desc = "Trouble: Next Diagnostic",
         mode = "n",
     },
     {
         "[t",
         function()
-            if not require("trouble").is_open() then
-                require("trouble").open({ mode = "diagnostics" })
+            local trouble = require("trouble")
+            if not trouble.is_open() then
+                trouble.open({ mode = "diagnostics" })
             else
-                require("trouble").prev({ skip_groups = true, jump = true })
+                trouble.prev({ skip_groups = true, jump = true })
             end
         end,
-        desc = "Previous diagnostic",
+        desc = "Trouble: Previous Diagnostic",
         mode = "n",
     },
     {
         "<leader>lts",
-        "<cmd>Trouble symbols toggle focus=false win.position=right win.size.width=42<cr>",
-        desc = "Symbols (Trouble)",
+        function()
+            vim.cmd("Trouble symbols toggle focus=false win.position=right win.size.width=42")
+        end,
+        desc = "Trouble: Document Symbols",
+        mode = "n",
     },
     {
         "<leader>ll",
-        "<cmd>Trouble lsp toggle focus=false win.position=right win.size.width=48<cr>",
-        desc = "LSP Definitions / references / ... (Trouble)",
+        function()
+            vim.cmd("Trouble lsp toggle focus=false win.position=right win.size.width=48")
+        end,
+        desc = "Trouble: LSP Definitions, References, etc.",
+        mode = "n",
     },
     {
         "<leader>lgd",
-        "<cmd>Trouble lsp_definitions toggle focus=false win.position=bottom<cr>",
-        desc = "LSP Definitions (Trouble)",
+        function()
+            vim.cmd("Trouble lsp_definitions toggle focus=false win.position=bottom")
+        end,
+        desc = "Trouble: LSP Definitions",
+        mode = "n",
     },
     {
         "<leader>lgi",
-        "<cmd>Trouble lsp_implementations toggle focus=false win.position=bottom<cr>",
-        desc = "LSP Implementations (Trouble)",
+        function()
+            vim.cmd("Trouble lsp_implementations toggle focus=false win.position=bottom")
+        end,
+        desc = "Trouble: LSP Implementations",
+        mode = "n",
     },
     {
         "<leader>lrr",
-        "<cmd>Trouble lsp_references toggle focus=false win.position=bottom<cr>",
-        desc = "LSP References (Trouble)",
+        function()
+            vim.cmd("Trouble lsp_references toggle focus=false win.position=bottom")
+        end,
+        desc = "Trouble: LSP References",
+        mode = "n",
     },
     {
         "<leader>lic",
-        "<cmd>Trouble lsp_incoming_calls toggle focus=false win.position=bottom<cr>",
-        desc = "LSP Incoming calls (Trouble)",
+        function()
+            vim.cmd("Trouble lsp_incoming_calls toggle focus=false win.position=bottom")
+        end,
+        desc = "Trouble: LSP Incoming Calls",
+        mode = "n",
     },
     {
         "<leader>loc",
-        "<cmd>Trouble lsp_outgoing_calls toggle focus=true win.position=right win.size.width=48<cr>",
-        desc = "LSP Outgoing calls (Trouble)",
+        function()
+            vim.cmd("Trouble lsp_outgoing_calls toggle focus=true win.position=right win.size.width=48")
+        end,
+        desc = "Trouble: LSP Outgoing Calls",
+        mode = "n",
     },
     {
         "<leader>lgt",
-        "<cmd>Trouble lsp_type_definitions focus=false win.position=bottom<cr>",
-        desc = "LSP Type Definitions (Trouble)",
+        function()
+            vim.cmd("Trouble lsp_type_definitions focus=false win.position=bottom")
+        end,
+        desc = "Trouble: LSP Type Definitions",
+        mode = "n",
     },
 }
 
