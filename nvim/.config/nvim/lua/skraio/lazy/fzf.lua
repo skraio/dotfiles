@@ -6,48 +6,49 @@ return {
         local fzflua = require("fzf-lua")
 
         --- files and buffers
-        vim.keymap.set({ 'n' }, '<leader>df', function()
+        vim.keymap.set({ 'n' }, '<leader>ff', function()
             fzflua.files()
         end, { desc = "FZF: Find file in project" })
 
-        vim.keymap.set({ 'n' }, '<leader>bf', function()
-            fzflua.buffers()
-        end, { desc = "FZF: Find open buffers" })
-
-        vim.keymap.set({ 'n' }, '<leader>bl', function()
-            fzflua.blines()
-        end, { desc = "FZF: Search lines (current buffer)" })
-
-        vim.keymap.set({ 'n' }, '<leader>Bl', function()
-            fzflua.lines()
-        end, { desc = "FZF: Search lines (all buffers)" })
-
-        vim.keymap.set({ 'n' }, '<leader>fo', function()
-            fzflua.oldfiles({ cwd = vim.uv.cwd(), cwd_header = true, cwd_only = true })
-        end, { desc = "FZF: Recent files (project only)" })
-
-        vim.keymap.set({ 'n' }, '<leader>fO', function()
-            fzflua.oldfiles({ winopts = { preview = { hidden = "hidden" } } })
-        end, { desc = "FZF: Recent files (global)" })
-
-        vim.keymap.set({ 'n' }, '<leader>cf', function()
+        vim.keymap.set({ 'n' }, '<leader>fd', function()
             fzflua.files({
                 cwd = vim.fn.expand('%:p:h'),
                 winopts = { preview = { hidden = "hidden" } }
             })
-        end, { desc = "FZF: Find files in current file's folder" })
+        end, { desc = "FZF: Find files in current file's directory" })
 
-        vim.keymap.set({ 'n' }, '<leader>ot', function()
-            fzflua.tabs({})
-        end, { desc = "FZF: Open tab switcher" })
-
-        vim.keymap.set({ 'n' }, '<leader>ht', function()
+        vim.keymap.set({ 'n' }, '<leader>fH', function()
             fzflua.files({
-                cwd = "~/personal/ht"
+                cwd = "~/personal/ht",
+                winopts = { preview = { hidden = false } }
             })
         end, { desc = "FZF: Find file in ~/personal/ht" })
 
-        --- git
+        vim.keymap.set({ 'n' }, '<leader>fb', function()
+            fzflua.buffers()
+        end, { desc = "FZF: Find buffers" })
+
+        vim.keymap.set({ 'n' }, '<leader>sl', function()
+            fzflua.blines()
+        end, { desc = "FZF: Search lines in current file" })
+
+        vim.keymap.set({ 'n' }, '<leader>sL', function()
+            fzflua.lines()
+        end, { desc = "FZF: Search lines in all buffers" })
+
+        vim.keymap.set({ 'n' }, '<leader>fo', function()
+            fzflua.oldfiles({ cwd = vim.uv.cwd(), cwd_header = true, cwd_only = true })
+        end, { desc = "FZF: Find old files in project" })
+
+        vim.keymap.set({ 'n' }, '<leader>fO', function()
+            fzflua.oldfiles({ winopts = { preview = { hidden = "hidden" } } })
+        end, { desc = "FZF: Find old files in global" })
+
+        vim.keymap.set({ 'n' }, '<leader>ft', function()
+            fzflua.tabs({})
+        end, { desc = "FZF: Find tabs" })
+
+        -- GIT -------------------------------------------------------------------------
         vim.keymap.set({ 'n' }, '<leader>fgf', function()
             fzflua.git_files()
         end, { desc = "FZF: Git-tracked files" })
@@ -69,54 +70,71 @@ return {
         end, { desc = "FZF: Git stash entries" })
 
         -- grep
-        vim.keymap.set({ 'n' }, '<leader>fw', function()
+        vim.keymap.set({ 'n' }, '<leader>wf', function()
             fzflua.blines({ query = vim.fn.expand("<cword>") })
-        end, { desc = "FZF: Search <cword> in current buffer's lines" })
+        end, { desc = "FZF: Find <cword> in file" })
 
-        vim.keymap.set({ 'n' }, '<leader>sw', function()
+        vim.keymap.set({ 'n' }, '<leader>Wf', function()
+            fzflua.blines({ query = vim.fn.expand("<cWORD>") })
+        end, { desc = "FZF: Search <cWORD> in file" })
+
+
+       vim.keymap.set({ 'n' }, '<leader>wg', function()
             fzflua.grep_curbuf({ search = vim.fn.expand("<cword>") })
-        end, { desc = "FZF: Grep <cword> in current buffer" })
+        end, { desc = "FZF: Grep <cword> in file" })
 
-        vim.keymap.set({ 'n' }, '<leader>*w', function()
+        vim.keymap.set({ 'n' }, '<leader>Wg', function()
+            fzflua.grep_curbuf({ search = vim.fn.expand("<cWORD>") })
+        end, { desc = "FZF: Grep <cWORD> in file" })
+
+
+        vim.keymap.set({ 'n' }, '<leader>wG', function()
             fzflua.grep_cword()
         end, { desc = "FZF: Grep <cword> in project" })
 
-        vim.keymap.set({ 'n' }, '<leader>fW', function()
-            fzflua.blines({ query = vim.fn.expand("<cWORD>") })
-        end, { desc = "FZF: Search <cWORD> in current buffer lines" })
-
-        vim.keymap.set({ 'n' }, '<leader>sW', function()
-            fzflua.grep_curbuf({ search = vim.fn.expand("<cWORD>") })
-        end, { desc = "FZF: Grep <cWORD> in current buffer" })
-
-        vim.keymap.set({ 'n' }, '<leader>*W', function()
+        vim.keymap.set({ 'n' }, '<leader>WG', function()
             fzflua.grep_cWORD()
         end, { desc = "FZF: Grep <cWORD> in project" })
 
-        vim.keymap.set({ 'v' }, '<leader>fv', function()
+
+        vim.keymap.set({ 'v' }, '<leader>vg', function()
+            fzflua.grep_curbuf({ search = fzflua.utils.get_visual_selection() })
+        end, { desc = "FZF: Grep visual selection in file" })
+
+        vim.keymap.set({ 'v' }, '<leader>vG', function()
             fzflua.grep_visual({})
         end, { desc = "FZF: Grep visual selection in project" })
 
-        vim.keymap.set({ 'n' }, '<leader>sl', function()
-            fzflua.live_grep_native({})
-        end, { desc = "FZF: Live grep in project" })
 
-        vim.keymap.set({ 'n' }, '<leader>sc', function()
+        vim.keymap.set({ 'n' }, '<leader>pg', function()
+            fzflua.grep_project()
+        end, { desc = "FZF: Grep project free format" })
+
+        vim.keymap.set({ 'n' }, '<leader>lg', function()
             fzflua.lgrep_curbuf()
-        end, { desc = "FZF: Live grep in current buffer" })
+        end, { desc = "FZF: Grep live in file" })
 
-        vim.keymap.set({ 'n' }, '<leader>sq', function()
+        vim.keymap.set({ 'n' }, '<leader>lG', function()
+            fzflua.live_grep_native({})
+        end, { desc = "FZF: Grep live in project" })
+
+        vim.keymap.set({ 'n' }, '<leader>LG', function()
+            fzflua.live_grep_glob({})
+        end, { desc = "FZF: Live grep with filters" })
+
+
+        vim.keymap.set({ 'n' }, '<leader>qg', function()
             fzflua.lgrep_quickfix({})
-        end, { desc = "FZF: Live grep in quickfix" })
+        end, { desc = "FZF: Grep live in quickfix" })
 
-        vim.keymap.set({ 'n' }, '<leader>sh', function()
+        vim.keymap.set({ 'n' }, '<leader>Hg', function()
             fzflua.live_grep_native({
                 cwd = "~/personal/ht"
             })
         end, { desc = "FZF: Live grep in ~/personal/ht" })
 
         --- misc
-        vim.keymap.set({ 'n' }, '<leader>rs', function()
+        vim.keymap.set({ 'n' }, '<leader>rp', function()
             fzflua.resume()
         end, { desc = "FZF: Resume last picker" })
 
@@ -124,19 +142,35 @@ return {
             fzflua.helptags({ winopts = { preview = { hidden = "hidden" } } })
         end, { desc = "FZF: Search help tags" })
 
-        vim.keymap.set({ 'n' }, '<leader>lc', function()
+        vim.keymap.set({ 'n' }, '<leader>fc', function()
             fzflua.commands({ winopts = { preview = { hidden = true } } })
         end, { desc = "FZF: List Neovim commands" })
 
-        vim.keymap.set({ 'n' }, '<leader>sm', function()
+        vim.keymap.set({ 'n' }, '<leader>fm', function()
             fzflua.marks({ winopts = { preview = { hidden = false, layout = "horizontal" } } })
         end, { desc = "FZF: Search marks" })
 
-        vim.keymap.set({ 'n' }, '<leader>sk', function()
-            fzflua.keymaps()
+        vim.keymap.set({ 'n' }, '<leader>fk', function()
+            fzflua.keymaps({ winopts = { preview = { hidden = true } } })
         end, { desc = "FZF: Search keymaps" })
 
+        vim.keymap.set({ 'n' }, '<leader>ch', function()
+            fzflua.command_history()
+        end, { desc = "FZF: Command history" })
+
+        vim.keymap.set({ 'n' }, '<leader>sh', function()
+            fzflua.search_history()
+        end, { desc = "FZF: Search history" })
+
         --- lsp
+        vim.keymap.set({ 'n' }, '<leader>fs', function()
+            fzflua.lsp_document_symbols({})
+        end, { desc = "FZF: LSP document symbols" })
+
+        vim.keymap.set({ 'n' }, '<leader>fS', function()
+            fzflua.lsp_workspace_symbols()
+        end, { desc = "FZF: LSP workspace symbols" })
+
         vim.keymap.set({ 'n' }, '<leader>fr', function()
             fzflua.lsp_references({ jump_to_single_result = true, ignore_current_line = true })
         end, { desc = "FZF: LSP references" })

@@ -190,7 +190,10 @@ return {
                     },
                     schemaStore = {
                         enable = true
-                    }
+                    },
+                    customTags = {
+                        "!Ref", "!ImportValue", "!reference sequence",
+                    },
                 }
             }
         })

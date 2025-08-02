@@ -1,0 +1,11 @@
+hotKeys:
+  quit:
+    shortCut: q
+    override: true
+    description: Quit
+    command: quit
+  #ns:
+  #  shortCut: Ctrl-K
+  #  override: true
+  #  description: Quit
+  #  command: ns

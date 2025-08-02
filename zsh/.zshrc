@@ -6,7 +6,6 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 export MANPAGER='nvim +Man!'
 export MANWIDTH=80
-alias v="nvim ."
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -113,8 +112,9 @@ source $ZSH/oh-my-zsh.sh
 if [ -x "$(command -v exa)" ]; then
     alias l="exa --long --sort=type --all"
 fi
-alias vim=nvim
 alias cal="ncal -M -b"
+alias kro="k9s --readonly"
+alias v="nvim"
 
 bindkey -s ^f "tmux-sessionizer\n"
 

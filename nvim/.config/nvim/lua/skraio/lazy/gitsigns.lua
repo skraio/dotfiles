@@ -120,7 +120,7 @@ return {
                     gitsigns.stage_buffer()
                 end, { desc = "Gitsigns: Stage entire buffer" })
 
-                map('n', '<leader>ghU', function()
+                map('n', '<leader>ghR', function()
                     gitsigns.reset_buffer()
                 end, { desc = "Gitsigns: Reset entire buffer" })
             end

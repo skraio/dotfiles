@@ -35,3 +35,4 @@ vim.opt.langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGH
 
 vim.opt.conceallevel = 0
 
+vim.opt.formatoptions:remove("t")

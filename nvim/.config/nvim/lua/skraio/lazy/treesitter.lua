@@ -58,9 +58,9 @@ return {
                 on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
             }
 
-            vim.keymap.set("n", "<leader>tsc", function()
+            vim.keymap.set("n", "<leader>toc", function()
                 vim.cmd("TSContext toggle")
-            end, { desc = "Treesitter: Toggle context display" })
+            end, { desc = "Treesitter: Toggle object context" })
         end
     }
 }
