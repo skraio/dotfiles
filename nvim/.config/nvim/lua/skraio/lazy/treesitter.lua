@@ -27,9 +27,17 @@ return {
                         set_jumps = true, -- whether to set jumps in the jumplist
                         goto_next_start = {
                             ["]f"] = "@function.outer",
+                            ["]o"] = "@loop.*",
                         },
                         goto_previous_start = {
                             ["[f"] = "@function.outer",
+                            ["[o"] = "@loop.*",
+                        },
+                        goto_next_end = {
+                            ["]O"] = "@loop.*",
+                        },
+                        goto_previous_end = {
+                            ["[O"] = "@loop.*",
                         },
                     },
                 },
@@ -50,7 +58,7 @@ return {
                 line_numbers = true,
                 multiline_threshold = 20, -- Maximum number of lines to show for a single context
                 trim_scope = 'outer',     -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-                mode = 'cursor',          -- Line used to calculate context. Choices: 'cursor', 'topline'
+                mode = 'topline',          -- Line used to calculate context. Choices: 'cursor', 'topline'
                 -- Separator between context and content. Should be a single character string, like '-'.
                 -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
                 separator = nil,

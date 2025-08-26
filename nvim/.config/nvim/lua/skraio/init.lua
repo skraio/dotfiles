@@ -39,8 +39,8 @@ autocmd('LspAttach', {
                 end
             end, opts)
 
-        vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts, { desc = "LSP: hover" })
-        vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts, { desc = "LSP: signature_help" })
+        --K vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts, { desc = "LSP: hover" })
+        --C-S vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts, { desc = "LSP: signature_help" })
         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
 
         vim.keymap.set("n", "<leader>hl", function() vim.lsp.buf.document_highlight() end, opts,
@@ -49,27 +49,19 @@ autocmd('LspAttach', {
             { desc = "LSP: clear references" })
 
         vim.keymap.set("n", "<leader>fmt", function() vim.lsp.buf.format() end, opts, { desc = "LSP: format" })
-        vim.keymap.set({ "n", "v" }, "<leader>ca", function() vim.lsp.buf.code_action() end, opts,
-            { desc = "LSP: code action" })
-        vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts, { desc = "LSP: rename" })
+        --gra vim.keymap.set({ "n", "v" }, "<leader>ca", function() vim.lsp.buf.code_action() end, opts, { desc = "LSP: code action" })
+        --grn vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts, { desc = "LSP: rename" })
 
 
         vim.keymap.set("n", "gd", function()
             vim.lsp.buf.definition()
         end, opts, { desc = "LSP: definition" })
-        vim.keymap.set("n", "gD", function()
-            vim.cmd("tab split")
-            vim.lsp.buf.definition()
-        end, opts, { desc = "LSP: definition in new tab" })
 
-        vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts, { desc = "LSP: references" })
-        vim.keymap.set("n", "<leader>ii", function() vim.lsp.buf.implementation() end, opts,
-            { desc = "LSP: implementation" })
+        --grr vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts, { desc = "LSP: references" })
+        --gri vim.keymap.set("n", "<leader>ii", function() vim.lsp.buf.implementation() end, opts, { desc = "LSP: implementation" })
 
-        vim.keymap.set("n", "<leader>ic", function() vim.lsp.buf.incoming_calls() end, opts,
-            { desc = "LSP: incoming calls" })
-        vim.keymap.set("n", "<leader>oc", function() vim.lsp.buf.outgoing_calls() end, opts,
-            { desc = "LSP: outgoing calls" })
+        -- vim.keymap.set("n", "<leader>ic", function() vim.lsp.buf.incoming_calls() end, opts, { desc = "LSP: incoming calls" })
+        -- vim.keymap.set("n", "<leader>oc", function() vim.lsp.buf.outgoing_calls() end, opts, { desc = "LSP: outgoing calls" })
     end
 })
 

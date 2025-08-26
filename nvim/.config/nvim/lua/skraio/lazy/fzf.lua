@@ -6,11 +6,11 @@ return {
         local fzflua = require("fzf-lua")
 
         --- files and buffers
-        vim.keymap.set({ 'n' }, '<leader>ff', function()
+        vim.keymap.set({ 'n' }, '<leader>fd', function()
             fzflua.files()
         end, { desc = "FZF: Find file in project" })
 
-        vim.keymap.set({ 'n' }, '<leader>fd', function()
+        vim.keymap.set({ 'n' }, '<leader>ff', function()
             fzflua.files({
                 cwd = vim.fn.expand('%:p:h'),
                 winopts = { preview = { hidden = "hidden" } }
@@ -79,7 +79,7 @@ return {
         end, { desc = "FZF: Search <cWORD> in file" })
 
 
-       vim.keymap.set({ 'n' }, '<leader>wg', function()
+        vim.keymap.set({ 'n' }, '<leader>wg', function()
             fzflua.grep_curbuf({ search = vim.fn.expand("<cword>") })
         end, { desc = "FZF: Grep <cword> in file" })
 
@@ -114,6 +114,10 @@ return {
             fzflua.lgrep_curbuf()
         end, { desc = "FZF: Grep live in file" })
 
+        vim.keymap.set({ 'n' }, '<leader>fs', function()
+            fzflua.grep_curbuf()
+        end, { desc = "FZF: Fzf search in file" })
+
         vim.keymap.set({ 'n' }, '<leader>lG', function()
             fzflua.live_grep_native({})
         end, { desc = "FZF: Grep live in project" })
@@ -146,7 +150,7 @@ return {
             fzflua.commands({ winopts = { preview = { hidden = true } } })
         end, { desc = "FZF: List Neovim commands" })
 
-        vim.keymap.set({ 'n' }, '<leader>fm', function()
+        vim.keymap.set({ 'n' }, '<leader>sm', function()
             fzflua.marks({ winopts = { preview = { hidden = false, layout = "horizontal" } } })
         end, { desc = "FZF: Search marks" })
 
@@ -162,18 +166,48 @@ return {
             fzflua.search_history()
         end, { desc = "FZF: Search history" })
 
+        vim.keymap.set({ 'n' }, '<leader>sr', function()
+            fzflua.registers({ winopts = { preview = { hidden = false, layout = "horizontal" } } })
+        end, { desc = "FZF: Search registers" })
+
         --- lsp
-        vim.keymap.set({ 'n' }, '<leader>fs', function()
-            fzflua.lsp_document_symbols({})
+        vim.keymap.set({ 'n' }, '<leader>ds', function()
+            fzflua.lsp_document_symbols({ winopts = { preview = { hidden = false, layout = "horizontal" } } })
         end, { desc = "FZF: LSP document symbols" })
 
-        vim.keymap.set({ 'n' }, '<leader>fS', function()
-            fzflua.lsp_workspace_symbols()
+        --- lsp
+        vim.keymap.set({ 'n' }, '<leader>fn', function()
+            fzflua.lsp_document_symbols({  query = "func", winopts = { preview = { vertical ="up:70%" } } })
+        end, { desc = "FZF: LSP document symbols" })
+
+        vim.keymap.set({ 'n' }, '<leader>ws', function()
+            fzflua.lsp_workspace_symbols({ winopts = { preview = { hidden = false, layout = "horizontal" } } })
         end, { desc = "FZF: LSP workspace symbols" })
 
+        vim.keymap.set({ 'n' }, '<leader>wS', function()
+            fzflua.lsp_live_workspace_symbols({ winopts = { preview = { vertical = "up:70%" } } })
+        end, { desc = "FZF: LSP live workspace symbols" })
+
         vim.keymap.set({ 'n' }, '<leader>fr', function()
-            fzflua.lsp_references({ jump_to_single_result = true, ignore_current_line = true })
+            fzflua.lsp_references({ winopts = { preview = { hidden = false, layout = "horizontal" } } })
+            -- fzflua.lsp_references()
         end, { desc = "FZF: LSP references" })
+
+        vim.keymap.set({ 'n' }, '<leader>im', function()
+            fzflua.lsp_implementations({ winopts = { preview = { hidden = false, layout = "horizontal" } } })
+        end, { desc = "FZF: LSP implementations" })
+
+        vim.keymap.set({ 'n' }, '<leader>ic', function()
+            fzflua.lsp_incoming_calls({ winopts = { preview = { vertical = "up:80%" } } })
+        end, { desc = "FZF: LSP incoming calls" })
+
+        vim.keymap.set({ 'n' }, '<leader>ll', function()
+            fzflua.lsp_finder({ winopts = { preview = { vertical = "up:80%" } } })
+        end, { desc = "FZF: LSP finder" })
+
+        vim.keymap.set({ 'n' }, '<leader>dt', function()
+            fzflua.lsp_typedefs({ winopts = { preview = { vertical = "up:70%" } } })
+        end, { desc = "FZF: LSP typedefs" })
 
         --- setup
         require("fzf-lua").setup {
@@ -191,7 +225,7 @@ return {
                 backdrop  = 0,
                 border    = "border-top",
                 title_pos = "left",
-                hl        = {
+                hls       = {
                     border = "TelescopeBorder",
                     header_bind = "NonText",
                     header_text = "NonText",
@@ -206,7 +240,7 @@ return {
                     border     = "border-top",
                     title_pos  = "left",
                     hidden     = false,
-                    vertical   = "up:55%",
+                    vertical   = "up:70%",
                     horizontal = "right:55%",
                     layout     = "vertical",
                     scrollbar  = false,

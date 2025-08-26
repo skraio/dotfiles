@@ -172,7 +172,7 @@ return {
                 gopls = {
                     buildFlags = { "-tags=integration" }
                 }
-            }
+            },
         })
 
         -- yamlls client configuration

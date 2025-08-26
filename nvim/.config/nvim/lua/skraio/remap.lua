@@ -8,11 +8,19 @@ vim.keymap.set({ "n", "v"}, "<leader><leader>P", "\"+P")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+vim.keymap.set({ "n", "x" }, "j", function()
+  return vim.v.count > 5 and "m'" .. vim.v.count .. "j" or "j"
+end, { noremap = true, expr = true })
+
+vim.keymap.set({ "n", "x" }, "k", function()
+  return vim.v.count > 5 and "m'" .. vim.v.count .. "k" or "k"
+end, { noremap = true, expr = true })
+
 vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz")
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- vim.keymap.set("n", "n", "nzzzv")
+-- vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("x", ">", ">gv")
 vim.keymap.set("x", "<", "<gv")

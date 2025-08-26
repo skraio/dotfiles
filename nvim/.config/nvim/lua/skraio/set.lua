@@ -7,6 +7,9 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smarttab = true
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
@@ -36,3 +39,5 @@ vim.opt.langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGH
 vim.opt.conceallevel = 0
 
 vim.opt.formatoptions:remove("t")
+vim.opt.formatoptions:remove("c")
+

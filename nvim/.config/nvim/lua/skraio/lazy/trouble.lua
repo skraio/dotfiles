@@ -49,70 +49,70 @@ local keys = {
         desc = "Trouble: Previous Diagnostic",
         mode = "n",
     },
+    -- {
+    --     "<leader>lts",
+    --     function()
+    --         vim.cmd("Trouble symbols toggle focus=false win.position=right win.size.width=42")
+    --     end,
+    --     desc = "Trouble: Document Symbols",
+    --     mode = "n",
+    -- },
+    -- {
+    --     "<leader>ll",
+    --     function()
+    --         vim.cmd("Trouble lsp toggle focus=false win.position=right win.size.width=48")
+    --     end,
+    --     desc = "Trouble: LSP Definitions, References, etc.",
+    --     mode = "n",
+    -- },
+    -- {
+    --     "<leader>lgd",
+    --     function()
+    --         vim.cmd("Trouble lsp_definitions toggle focus=false win.position=bottom")
+    --     end,
+    --     desc = "Trouble: LSP Definitions",
+    --     mode = "n",
+    -- },
+    -- {
+    --     "<leader>lgi",
+    --     function()
+    --         vim.cmd("Trouble lsp_implementations toggle focus=false win.position=bottom")
+    --     end,
+    --     desc = "Trouble: LSP Implementations",
+    --     mode = "n",
+    -- },
+    -- {
+    --     "<leader>lrr",
+    --     function()
+    --         vim.cmd("Trouble lsp_references toggle focus=false win.position=bottom")
+    --     end,
+    --     desc = "Trouble: LSP References",
+    --     mode = "n",
+    -- },
+    -- {
+    --     "<leader>lic",
+    --     function()
+    --         vim.cmd("Trouble lsp_incoming_calls toggle focus=false win.position=bottom")
+    --     end,
+    --     desc = "Trouble: LSP Incoming Calls",
+    --     mode = "n",
+    -- },
     {
-        "<leader>lts",
+        "<leader>oc",
         function()
-            vim.cmd("Trouble symbols toggle focus=false win.position=right win.size.width=42")
-        end,
-        desc = "Trouble: Document Symbols",
-        mode = "n",
-    },
-    {
-        "<leader>ll",
-        function()
-            vim.cmd("Trouble lsp toggle focus=false win.position=right win.size.width=48")
-        end,
-        desc = "Trouble: LSP Definitions, References, etc.",
-        mode = "n",
-    },
-    {
-        "<leader>lgd",
-        function()
-            vim.cmd("Trouble lsp_definitions toggle focus=false win.position=bottom")
-        end,
-        desc = "Trouble: LSP Definitions",
-        mode = "n",
-    },
-    {
-        "<leader>lgi",
-        function()
-            vim.cmd("Trouble lsp_implementations toggle focus=false win.position=bottom")
-        end,
-        desc = "Trouble: LSP Implementations",
-        mode = "n",
-    },
-    {
-        "<leader>lrr",
-        function()
-            vim.cmd("Trouble lsp_references toggle focus=false win.position=bottom")
-        end,
-        desc = "Trouble: LSP References",
-        mode = "n",
-    },
-    {
-        "<leader>lic",
-        function()
-            vim.cmd("Trouble lsp_incoming_calls toggle focus=false win.position=bottom")
-        end,
-        desc = "Trouble: LSP Incoming Calls",
-        mode = "n",
-    },
-    {
-        "<leader>loc",
-        function()
-            vim.cmd("Trouble lsp_outgoing_calls toggle focus=true win.position=right win.size.width=48")
+            vim.cmd("Trouble lsp_outgoing_calls toggle focus=true")
         end,
         desc = "Trouble: LSP Outgoing Calls",
         mode = "n",
     },
-    {
-        "<leader>lgt",
-        function()
-            vim.cmd("Trouble lsp_type_definitions focus=false win.position=bottom")
-        end,
-        desc = "Trouble: LSP Type Definitions",
-        mode = "n",
-    },
+    -- {
+    --     "<leader>lgt",
+    --     function()
+    --         vim.cmd("Trouble lsp_type_definitions focus=false win.position=bottom")
+    --     end,
+    --     desc = "Trouble: LSP Type Definitions",
+    --     mode = "n",
+    -- },
 }
 
 local modes = {
@@ -135,7 +135,7 @@ local modes = {
             type = "float",
             realtive = "editor",
             size = { width = 0.5, height = 0.5 },
-            position = { 0.5, 0 },
+            position = { 0.5, 1 },
             border = "rounded",
             title = "Preview",
             title_pos = "center",
@@ -195,6 +195,12 @@ local modes = {
     },
     lsp = {
         mode = "lsp_preview",
+    },
+    lsp_outgoing_calls = {
+        mode = "lsp_preview",
+        win = {
+            title = "Outgoing calls",
+        },
     }
 }
 

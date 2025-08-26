@@ -5,6 +5,9 @@ return {
     },
     config = function ()
         local curl = require("curl")
-        curl.setup({})
+        curl.setup({
+            ft = { "curl" },
+            output_split_direction = 'horizontal',
+        })
     end
 }
