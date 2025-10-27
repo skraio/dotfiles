@@ -210,6 +210,18 @@ return {
             on_attach = on_attach,
         })
 
+        -- dockerfile client configuration
+        require('lspconfig').dockerls.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        -- docker compose client configuration
+        require('lspconfig').docker_compose_language_service.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
         local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
         function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
             opts = opts or {}

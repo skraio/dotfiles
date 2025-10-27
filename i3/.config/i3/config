@@ -173,6 +173,10 @@ bindsym $mod+Shift+s exec flameshot gui
 
 # Suspend
 bindsym $mod+Shift+period exec i3lock -c 000000 && systemctl suspend
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # Hibernate
 # bindsym $win+Shift+h exec systemctl hibernate && i3lock -c 000000

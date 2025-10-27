@@ -1,6 +1,11 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
+vim.opt.inccommand = "split"
+
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -12,7 +17,13 @@ vim.opt.smartcase = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
+vim.opt.smoothscroll = true
+vim.opt.linebreak = true
+vim.opt.more = false
+
+vim.opt.title = true
+vim.opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -28,9 +39,9 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "100"
+-- vim.opt.colorcolumn = "100"
 
-vim.opt.textwidth = 100
+vim.opt.textwidth = 120
 
 vim.g.mapleader = " "
 
@@ -40,4 +51,4 @@ vim.opt.conceallevel = 0
 
 vim.opt.formatoptions:remove("t")
 vim.opt.formatoptions:remove("c")
-
+vim.opt.formatoptions:remove("o")

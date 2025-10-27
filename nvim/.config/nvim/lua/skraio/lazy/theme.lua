@@ -23,7 +23,8 @@ return {
                     },
                 },
             })
-            vim.cmd("colorscheme kanagawa-dragon")
+            vim.cmd("colorscheme kanagawa-wave")
+            -- vim.cmd("colorscheme kanagawa-dragon")
             -- vim.cmd("colorscheme kanagawa-lotus")
         end,
 
@@ -33,6 +34,10 @@ return {
 
         vim.keymap.set("n", "<leader>csd", function()
             vim.cmd("colorscheme kanagawa-dragon")
-        end, { desc = "Colorscheme: Switch to kanagawa-dragon" })
+        end, { desc = "Colorscheme: Switch to kanagawa-dragon" }),
+
+        vim.keymap.set("n", "<leader>csw", function()
+            vim.cmd("colorscheme kanagawa-wave")
+        end, { desc = "Colorscheme: Switch to kanagawa-wave" })
     },
 }

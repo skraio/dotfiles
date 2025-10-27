@@ -112,9 +112,9 @@ source $ZSH/oh-my-zsh.sh
 if [ -x "$(command -v exa)" ]; then
     alias l="exa --long --sort=type --all"
 fi
+alias vim="nvim"
 alias cal="ncal -M -b"
 alias kro="k9s --readonly"
-alias v="nvim"
 
 bindkey -s ^f "tmux-sessionizer\n"
 

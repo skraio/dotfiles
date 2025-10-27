@@ -106,9 +106,9 @@ return {
         end, { desc = "FZF: Grep visual selection in project" })
 
 
-        vim.keymap.set({ 'n' }, '<leader>pg', function()
-            fzflua.grep_project()
-        end, { desc = "FZF: Grep project free format" })
+        -- vim.keymap.set({ 'n' }, '<leader>pg', function()
+        --     fzflua.grep_project()
+        -- end, { desc = "FZF: Grep project free format" })
 
         vim.keymap.set({ 'n' }, '<leader>lg', function()
             fzflua.lgrep_curbuf()
